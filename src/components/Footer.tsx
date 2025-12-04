@@ -1,13 +1,33 @@
 export default function Footer() {
-    return (
-      <footer className="bg-gray-800 text-white py-4">
-        <div className="container mx-auto px-4 text-center">
-          <p>&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
-          <div className="flex justify-center space-x-4 mt-2">
-            <a href="https://github.com/yourusername" className="hover:text-gray-300">GitHub</a>
-            <a href="https://linkedin.com/in/yourusername" className="hover:text-gray-300">LinkedIn</a>
-          </div>
+  return (
+    <footer className="bg-[#121212] text-[#E0D7CF] py-6 border-t border-[#2A2A2A]">
+      <div className="container mx-auto px-4 text-center">
+
+        <p className="text-sm mb-3">
+          &copy; {new Date().getFullYear()} Kevinas Ramoska. All rights reserved.
+        </p>
+
+        <div className="flex justify-center space-x-6 text-lg">
+          <a
+            href="https://github.com/kevinasramoska"
+            target="_blank"
+            className="hover:text-[#5C3D2E] transition"
+          >
+            GitHub
+          </a>
+
+          <a
+            href="https://linkedin.com/in/kramoska"
+            target="_blank"
+            className="hover:text-[#5C3D2E] transition"
+          >
+            LinkedIn
+          </a>
         </div>
-      </footer>
-    );
-  }
+
+        {/* Optional small accent bar */}
+        <div className="mt-6 w-20 h-1 bg-[#5C3D2E] mx-auto rounded-full"></div>
+      </div>
+    </footer>
+  );
+}
