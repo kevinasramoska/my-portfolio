@@ -7,10 +7,12 @@ export default function Projects() {
       link: "https://github.com/kevinasramoska/crypto-portfolio-app.git",
     },
     {
-      title: "Project Two",
-      description: "A mobile-friendly e-commerce platform.",
-      link: "https://github.com/yourusername/project-two",
-    },
+      title: "RentRight Property Management System",
+      description:
+        "A full-stack property management platform built with ASP.NET Core MVC 9, EF Core, SQL Server, and Azure App Service deployment. Features landlord/tenant management, property listings, authentication, and fully containerized local development with Docker.",
+      link: "https://github.com/kevinasramoska/RentRight.git",
+},
+
   ];
 
   return (
@@ -39,7 +41,7 @@ export default function Projects() {
                 className="inline-block px-5 py-2 rounded-lg bg-[#5C3D2E] text-white 
                 font-semibold hover:bg-[#4A2F23] transition"
               >
-                View Project →
+                Github →
               </a>
             </div>
           ))}
