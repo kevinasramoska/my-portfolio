@@ -7,11 +7,12 @@ export default function Footer() {
           &copy; {new Date().getFullYear()} Kevinas Ramoska. All rights reserved.
         </p>
 
-        <div className="flex justify-center space-x-6 text-lg">
+        <div className="flex justify-center space-x-6 text-lg flex-wrap gap-y-2">
           <a
             href="https://github.com/kevinasramoska"
             target="_blank"
             className="hover:text-[#5C3D2E] transition"
+            rel="noreferrer"
           >
             GitHub
           </a>
@@ -20,12 +21,21 @@ export default function Footer() {
             href="https://linkedin.com/in/kramoska"
             target="_blank"
             className="hover:text-[#5C3D2E] transition"
+            rel="noreferrer"
           >
             LinkedIn
           </a>
+
+          <a
+            href="/Kevinas-Ramoska-Resume.pdf"
+            download
+            className="hover:text-[#5C3D2E] transition"
+          >
+            Resume
+          </a>
         </div>
 
-        {/* Optional small accent bar */}
+        {/* Accent bar */}
         <div className="mt-6 w-20 h-1 bg-[#5C3D2E] mx-auto rounded-full"></div>
       </div>
     </footer>
