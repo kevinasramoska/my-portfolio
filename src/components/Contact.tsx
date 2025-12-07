@@ -4,14 +4,25 @@ export default function Contact() {
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-10">Contact Me</h2>
 
-        <form className="max-w-md mx-auto bg-[#1A1A1A] p-6 rounded-xl border border-[#2A2A2A] shadow-lg">
+        <form
+          action="https://formsubmit.co/kevinas530@gmail.com"
+          method="POST"
+          className="max-w-md mx-auto bg-[#1A1A1A] p-6 rounded-xl border border-[#2A2A2A] shadow-lg"
+        >
+          {/* FormSubmit Settings */}
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_subject" value="New message from your portfolio!" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_autoresponse" value="Thanks for reaching out! I’ll get back to you shortly." />
+
           <div className="mb-5">
             <label htmlFor="name" className="block mb-1 text-[#D4C9C1]">
               Name
             </label>
             <input
               type="text"
-              id="name"
+              name="name"
+              required
               className="w-full p-3 rounded-md bg-[#121212] border border-[#2A2A2A] 
               text-[#E0D7CF] focus:outline-none focus:border-[#5C3D2E]"
               placeholder="Your Name"
@@ -24,7 +35,8 @@ export default function Contact() {
             </label>
             <input
               type="email"
-              id="email"
+              name="email"
+              required
               className="w-full p-3 rounded-md bg-[#121212] border border-[#2A2A2A] 
               text-[#E0D7CF] focus:outline-none focus:border-[#5C3D2E]"
               placeholder="Your Email"
@@ -36,8 +48,9 @@ export default function Contact() {
               Message
             </label>
             <textarea
-              id="message"
+              name="message"
               rows={4}
+              required
               className="w-full p-3 rounded-md bg-[#121212] border border-[#2A2A2A] 
               text-[#E0D7CF] focus:outline-none focus:border-[#5C3D2E]"
               placeholder="Your Message"
@@ -63,7 +76,6 @@ export default function Contact() {
           </a>
         </p>
 
-        {/* Optional accent divider */}
         <div className="mt-12 w-24 h-1 bg-[#5C3D2E] mx-auto rounded-full"></div>
       </div>
     </section>
