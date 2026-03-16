@@ -7,7 +7,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 // import FeaturedProject from "@/components/FeaturedProject";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
-import WhatImLookingFor from "@/components/WhatImLookingFor";
+// import WhatImLookingFor from "@/components/WhatImLookingFor";
 // import GitHubActivity from "@/components/GitHubActivity";
 
 export default function Home() {
@@ -17,7 +17,7 @@ export default function Home() {
       <main>
         <Hero />
         <About />
-        <WhatImLookingFor />
+        {/* <WhatImLookingFor /> */}
         <ExperienceTimeline /> 
         {/* <FeaturedProject /> */}
         <Projects />

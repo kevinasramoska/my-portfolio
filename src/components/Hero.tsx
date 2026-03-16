@@ -10,8 +10,8 @@ export default function Hero() {
 
         {/* Strong 1-line positioning statement */}
         <p className="text-xl mb-6 text-[#d4c9c1]">
-          Full-Stack Software Engineer specialising in Java, Spring Boot & .NET systems
-        </p>
+          Software Engineer building backend-heavy web applications with Java, Spring Boot, .NET, PostgreSQL, and React.
+          Previous experience at General Motors. Focused on secure APIs, scalable systems, and clean end-to-end delivery.</p>
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -24,7 +24,7 @@ export default function Hero() {
           </a>
 
           <a
-            href="/Kevinas-Ramoska-Resume.pdf"
+            href="public/kevinas-ramoska_Resume.pdf"
             download
             className="px-6 py-3 rounded-full border border-[#5C3D2E] 
             text-[#5C3D2E] hover:bg-[#5C3D2E] hover:text-white 
