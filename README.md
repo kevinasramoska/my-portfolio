@@ -1,36 +1,147 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kevinas Ramoska – Software Engineering Portfolio
 
-## Getting Started
+This repository contains the source code for my personal software engineering portfolio website.
 
-First, run the development server:
+The portfolio showcases my projects, technical experience, and engineering focus areas. It is designed to present my work clearly to recruiters and hiring managers while demonstrating my frontend and full-stack development capabilities.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Live site  
+https://kevinasramoska-portfolio.vercel.app
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Overview
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This portfolio was built to provide a clean, modern interface highlighting:
 
-## Learn More
+• Full-stack engineering projects  
+• Technical skills and technologies  
+• Professional experience  
+• Contact information for collaboration or opportunities  
 
-To learn more about Next.js, take a look at the following resources:
+The goal of the project is to demonstrate both software engineering ability and an understanding of building performant modern web applications.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Tech Stack
 
-## Deploy on Vercel
+Frontend  
+React  
+TypeScript  
+Tailwind CSS  
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Framework / Tooling  
+Vite  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deployment  
+Vercel  
+
+Version Control  
+Git + GitHub
+
+---
+
+# Key Features
+
+• Responsive modern UI  
+• Project showcase section  
+• Professional experience timeline  
+• Technical skills overview  
+• Downloadable résumé  
+• Contact links to GitHub and LinkedIn  
+
+---
+
+# Project Structure
+
+src
+components
+Hero
+Projects
+Experience
+Skills
+Contact
+
+pages
+Home
+
+assets
+styles
+
+The application is organized into reusable React components for maintainability and scalability.
+
+---
+
+# Architecture
+
+The portfolio follows a component-based architecture typical of modern React applications.
+
+Each section of the site is implemented as an isolated component which improves:
+
+• readability  
+• reusability  
+• scalability  
+
+Styling is handled through Tailwind CSS utility classes.
+
+---
+
+# Local Development
+
+Clone the repository
+
+
+Navigate to the project directory
+
+cd my-portfolio
+
+
+Install dependencies
+
+
+
+---
+
+# Deployment
+
+The site is deployed using **Vercel**.
+
+Deployment workflow:
+
+1. Push changes to GitHub
+2. Vercel automatically builds the project
+3. The new version is deployed to the live domain
+
+---
+
+# Future Improvements
+
+Planned improvements include:
+
+• additional engineering project case studies  
+• architecture diagrams for major projects  
+• improved project filtering and navigation  
+• blog posts or technical write-ups  
+• performance optimization and accessibility improvements  
+
+---
+
+# Author
+
+Kevinas Ramoska  
+Software Engineer
+
+Portfolio  
+https://kevinasramoska-portfolio.vercel.app
+
+GitHub  
+https://github.com/kevinasramoska
+
+LinkedIn  
+https://linkedin.com/in/kevinasramoska
+
+---
+
+# License
+
+This project is open source and available under the MIT License.
+
