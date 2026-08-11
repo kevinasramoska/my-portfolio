@@ -2,57 +2,126 @@
 
 import { motion } from "framer-motion";
 
+const skillGroups = [
+  {
+    title: "Core Stack",
+    description:
+      "The technologies I am most focused on for building backend-heavy and full-stack applications.",
+    skills: [
+      "Java",
+      "Spring Boot",
+      "PostgreSQL",
+      "C#",
+      "ASP.NET Core",
+      "React",
+      "Next.js",
+      "TypeScript",
+    ],
+  },
+  {
+    title: "Backend Development",
+    description:
+      "Technologies and concepts I use for APIs, authentication, services, and data-driven systems.",
+    skills: [
+      "REST APIs",
+      "JWT Authentication",
+      "Authorization",
+      "Database Design",
+      "Hibernate / JPA",
+      "Entity Framework Core",
+      "Service Architecture",
+      "Backend Feature Development",
+    ],
+  },
+  {
+    title: "Frontend Development",
+    description:
+      "Tools I use to build responsive interfaces and connect frontend experiences to backend systems.",
+    skills: [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Responsive UI Design",
+      "Component-Based Architecture",
+      "Frontend Integration",
+    ],
+  },
+  {
+    title: "Tools & Platform",
+    description:
+      "The tools and platforms I use for development, deployment, collaboration, and workflow.",
+    skills: [
+      "Git",
+      "GitHub",
+      "Docker",
+      "Azure",
+      "Linux",
+      "Vercel",
+      "Agile",
+      "VS Code",
+    ],
+  },
+];
+
 export default function Skills() {
-  const skillGroups = [
-    {
-      title: "Frontend",
-      skills: ["JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS"],
-    },
-    {
-      title: "Backend",
-      skills: ["Java", "Spring Boot", "C#", "ASP.NET Core", "Node.js"],
-    },
-    {
-      title: "Databases",
-      skills: ["PostgreSQL", "SQL Server", "EF Core", "Hibernate / JPA"],
-    },
-    {
-      title: "DevOps & Tools",
-      skills: [
-        "Docker",
-        "Git & GitHub",
-        "Azure App Service",
-        "REST APIs",
-        "JWT Authentication",
-      ],
-    },
-  ];
-
   return (
-    <section id="skills" className="py-20 bg-[#121212] text-[#E0D7CF]">
-      <div className="container mx-auto px-4 text-center">
-        <h2 className="text-4xl font-bold mb-12">Skills</h2>
+    <section id="skills" className="px-6 py-24 sm:px-10 lg:px-16">
+      <div className="mx-auto max-w-5xl rounded-3xl border border-stone-800 bg-stone-900/40 p-8 sm:p-10 lg:p-12">
+        <motion.p
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.45 }}
+          className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-stone-400"
+        >
+          Skills
+        </motion.p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+        <motion.h2
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.05 }}
+          className="text-3xl font-bold text-stone-100 sm:text-4xl"
+        >
+          Technologies I use to design, build, and ship software
+        </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="mt-6 max-w-3xl text-lg leading-8 text-stone-300"
+        >
+          My strongest focus is backend and full-stack development using Java,
+          Spring Boot, .NET, PostgreSQL, React, and modern tooling for building
+          practical, production-ready applications.
+        </motion.p>
+
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
           {skillGroups.map((group, index) => (
             <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 40 }}
+              key={group.title}
+              initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-xl p-6 shadow-lg"
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{ duration: 0.45, delay: index * 0.08 }}
+              className="rounded-2xl border border-stone-800 bg-stone-950/60 p-6 sm:p-7"
             >
-              <h3 className="text-2xl font-semibold mb-5 text-[#E0D7CF]">
+              <h3 className="text-xl font-semibold text-stone-100">
                 {group.title}
               </h3>
 
-              <div className="flex flex-wrap gap-3 justify-center">
-                {group.skills.map((skill, i) => (
+              <p className="mt-3 text-sm leading-7 text-stone-400">
+                {group.description}
+              </p>
+
+              <div className="mt-6 flex flex-wrap gap-3">
+                {group.skills.map((skill) => (
                   <span
-                    key={i}
-                    className="px-4 py-2 rounded-full text-white text-sm font-medium 
-                    bg-[#5C3D2E] hover:bg-[#4A2F23] transition shadow-md"
+                    key={skill}
+                    className="rounded-full border border-stone-700 bg-stone-900 px-4 py-2 text-sm text-stone-200"
                   >
                     {skill}
                   </span>
@@ -61,8 +130,6 @@ export default function Skills() {
             </motion.div>
           ))}
         </div>
-
-        <div className="mt-14 w-24 h-1 bg-[#5C3D2E] mx-auto rounded-full"></div>
       </div>
     </section>
   );

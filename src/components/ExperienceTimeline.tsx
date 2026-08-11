@@ -2,86 +2,82 @@
 
 import { motion } from "framer-motion";
 
+const experiences = [
+  {
+    year: "2023 – 2024",
+    title: "Software Engineering Intern",
+    place: "General Motors",
+    description:
+      "Worked on enterprise backend systems using Java, Spring Boot, and PostgreSQL. Contributed to REST API development, implemented new backend features, and helped improve service performance. Collaborated within an Agile engineering team and gained experience working with production codebases and internal engineering tools.",
+  },
+];
+
 export default function ExperienceTimeline() {
-  const timeline = [
-    {
-      year: "2021 – 2024",
-      title: "BSc Computer Science & Software Engineering",
-      place: "Maynooth University",
-      description:
-        "Completed a full-time undergraduate degree focused on software engineering, algorithms, distributed systems, databases, and web development.",
-    },
-    {
-      year: "2023 – 2024",
-      title: "Software Engineering Intern",
-      place: "General Motors",
-      description:
-        "Worked on enterprise-level software using Java/Spring Boot and .NET technologies, contributing to backend services, APIs, and production systems.",
-    },
-    {
-      year: "2024 – 2025",
-      title: "International Judo Athlete",
-      place: "Irish National Team",
-      description:
-        "Competed internationally representing Ireland, developing elite discipline, resilience under pressure, and high-performance execution.",
-    },
-    {
-      year: "2025 – Present",
-      title: "Full-Stack Software Engineer (Projects)",
-      place: "Personal & Open-Source Projects",
-      description:
-        "Building production-ready full-stack systems including a crypto portfolio tracking platform and a property management system using Java, Spring Boot, .NET, SQL, Docker, and Next.js.",
-    },
-  ];
-
   return (
-    <section id="timeline" className="py-20 bg-[#121212] text-[#E0D7CF]">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-16">
-          Experience Timeline
-        </h2>
+    <section id="experience" className="px-6 py-24 sm:px-10 lg:px-16">
+      <div className="mx-auto max-w-5xl rounded-3xl border border-stone-800 bg-stone-900/40 p-8 sm:p-10 lg:p-12">
+        <motion.p
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.45 }}
+          className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-stone-400"
+        >
+          Experience
+        </motion.p>
 
-        <div className="relative max-w-4xl mx-auto">
-          {/* Vertical Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-[#2A2A2A]" />
+        <motion.h2
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.05 }}
+          className="text-3xl font-bold text-stone-100 sm:text-4xl"
+        >
+          Enterprise software experience with a backend focus
+        </motion.h2>
 
-          <div className="space-y-16">
-            {timeline.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                className={`relative flex flex-col md:flex-row items-center ${
-                  index % 2 === 0 ? "md:flex-row-reverse" : ""
-                }`}
-              >
-                {/* Content Card */}
-                <div className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-xl p-6 shadow-lg w-full md:w-5/12">
-                  <span className="text-sm text-[#5C3D2E] font-semibold">
-                    {item.year}
-                  </span>
-                  <h3 className="text-xl font-bold mt-2 mb-1">
+        <motion.p
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="mt-6 max-w-3xl text-lg leading-8 text-stone-300"
+        >
+          My professional experience so far has centered on backend engineering,
+          APIs, and working within real software delivery environments.
+        </motion.p>
+
+        <div className="mt-10 space-y-8">
+          {experiences.map((item, index) => (
+            <motion.div
+              key={`${item.place}-${item.year}`}
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{ duration: 0.45, delay: index * 0.08 }}
+              className="rounded-2xl border border-stone-800 bg-stone-950/60 p-6 sm:p-8"
+            >
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <p className="text-xl font-semibold text-stone-100">
                     {item.title}
-                  </h3>
-                  <p className="text-sm text-[#D4C9C1] mb-3">
-                    {item.place}
                   </p>
-                  <p className="text-[#D4C9C1] text-sm leading-relaxed">
-                    {item.description}
+                  <p className="mt-1 text-base font-medium text-blue-400">
+                    {item.place}
                   </p>
                 </div>
 
-                {/* Timeline Dot */}
-                <div className="w-6 h-6 bg-[#5C3D2E] rounded-full border-4 border-[#121212] z-10 my-6 md:my-0" />
-              </motion.div>
-            ))}
-          </div>
-        </div>
+                <div className="shrink-0 rounded-full border border-stone-700 bg-stone-900 px-4 py-2 text-sm font-medium text-stone-300">
+                  {item.year}
+                </div>
+              </div>
 
-        {/* Accent Divider */}
-        <div className="mt-16 w-24 h-1 bg-[#5C3D2E] mx-auto rounded-full"></div>
+              <p className="mt-6 text-base leading-8 text-stone-300">
+                {item.description}
+              </p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

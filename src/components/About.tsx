@@ -1,22 +1,40 @@
+"use client";
+
 export default function About() {
   return (
-    <section id="about" className="py-20 bg-[#121212] text-[#E0D7CF]">
-      <div className="container mx-auto px-4 text-center">
-        <h2 className="text-4xl font-bold mb-8">About Me</h2>
-
-        <p className="text-lg leading-relaxed max-w-3xl mx-auto text-[#D4C9C1]">
-          I am a results-driven software engineer with hands-on experience building full-stack web
-          applications using <span className="text-[#E0D7CF] font-medium">Java, Spring Boot, C#, ASP.NET Core,
-          PostgreSQL, and modern frontend frameworks like React and Next.js</span>.
-          I specialise in designing clean APIs, secure authentication flows, and scalable data-driven systems.
-          <br /><br />
-          I am currently seeking a
-          <span className="text-[#E0D7CF] font-medium"> junior to mid-level software engineering role</span>
-          where I can contribute to a collaborative engineering team, continue developing my backend expertise,
-          and build scalable, high-impact software products.
+    <section id="about" className="px-6 py-24 sm:px-10 lg:px-16">
+      <div className="mx-auto max-w-4xl rounded-3xl border border-stone-800 bg-stone-900/40 p-8 sm:p-10 lg:p-12">
+        <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-stone-400">
+          About
         </p>
 
-        <div className="mt-12 w-24 h-1 bg-[#5C3D2E] mx-auto rounded-full"></div>
+        <h2 className="text-3xl font-bold text-stone-100 sm:text-4xl">
+          Building practical software with a backend-first mindset
+        </h2>
+
+        <div className="mt-6 space-y-6 text-lg leading-8 text-stone-300">
+          <p>
+            I enjoy building backend systems, APIs, and full-stack applications
+            that are clean, secure, and easy to maintain. My main focus is
+            Java, Spring Boot, .NET, PostgreSQL, and React. I like working on
+            practical software problems involving architecture,
+            authentication, database design, and production-ready implementation.
+          </p>
+
+          <p>
+            My internship at General Motors gave me experience working with
+            enterprise software, backend services, and professional engineering
+            workflows. Since then, I have continued building personal projects
+            that strengthen my backend and full-stack skills.
+          </p>
+
+          <p>
+            Outside of software engineering, I competed internationally as a
+            judo athlete representing Ireland. That background shaped my
+            approach to engineering: disciplined, consistent, and focused on
+            long-term improvement.
+          </p>
+        </div>
       </div>
     </section>
   );
