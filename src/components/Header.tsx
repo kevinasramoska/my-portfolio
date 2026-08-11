@@ -1,15 +1,16 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { profile } from "@/content/profile";
 
 const navigation = [
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-  { label: "Skills", href: "#skills" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Experience", href: "/#experience" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Skills", href: "/#skills" },
+  { label: "About", href: "/#about" },
+  { label: "Contact", href: "/#contact" },
 ] as const;
 
 export default function Header() {
@@ -37,13 +38,13 @@ export default function Header() {
   return (
     <header className="fixed top-0 z-20 w-full border-b border-stone-800 bg-stone-950/95 text-stone-100 backdrop-blur-md">
       <div className="relative mx-auto flex min-h-16 max-w-6xl items-center justify-between px-6 sm:px-10 lg:px-0">
-        <a
-          href="#home"
+        <Link
+          href="/#home"
           className="inline-flex min-h-11 items-center text-lg font-bold tracking-wide sm:text-xl"
           onClick={closeMenu}
         >
           {profile.name}
-        </a>
+        </Link>
 
         <button
           ref={menuButtonRef}
@@ -67,13 +68,13 @@ export default function Header() {
           <ul className="flex flex-col gap-1 lg:flex-row lg:items-center lg:gap-2">
             {navigation.map((item) => (
               <li key={item.href}>
-                <a
+                <Link
                   href={item.href}
                   className="inline-flex min-h-11 w-full items-center rounded-lg px-3 text-base font-medium text-stone-300 transition hover:bg-stone-900 hover:text-blue-400 lg:w-auto"
                   onClick={closeMenu}
                 >
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
             <li>
