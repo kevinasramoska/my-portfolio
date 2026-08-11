@@ -98,6 +98,14 @@ npm ci
 npm run dev
 ```
 
+Quality checks:
+
+```bash
+npm run lint
+npm run typecheck
+npm run build
+```
+
 ## Updating the Resume
 
 Edit `resume/kevinas-ramoska-resume.html`, then generate the tagged PDF served by the portfolio:
