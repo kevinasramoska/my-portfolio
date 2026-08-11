@@ -1,82 +1,119 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { Mail, Github, Linkedin, FileText } from "lucide-react";
+import { profile } from "@/content/profile";
+
+const contactLinks = [
+  {
+    title: "Email",
+    value: profile.email,
+    href: `mailto:${profile.email}`,
+    icon: Mail,
+    newTab: false,
+  },
+  {
+    title: "GitHub",
+    value: profile.links.github.replace("https://", ""),
+    href: profile.links.github,
+    icon: Github,
+    newTab: true,
+  },
+  {
+    title: "LinkedIn",
+    value: profile.links.linkedin.replace("https://www.", ""),
+    href: profile.links.linkedin,
+    icon: Linkedin,
+    newTab: true,
+  },
+  {
+    title: "Resume",
+    value: "View PDF",
+    href: profile.links.resume,
+    icon: FileText,
+    newTab: true,
+  },
+];
+
 export default function Contact() {
   return (
-    <section id="contact" className="py-20 bg-[#121212] text-[#E0D7CF]">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-10">Contact Me</h2>
-
-        <form
-          action="https://formsubmit.co/kevinas530@gmail.com"
-          method="POST"
-          className="max-w-md mx-auto bg-[#1A1A1A] p-6 rounded-xl border border-[#2A2A2A] shadow-lg"
+    <section id="contact" className="px-6 py-24 sm:px-10 lg:px-16">
+      <div className="mx-auto max-w-5xl rounded-3xl border border-stone-800 bg-stone-900/40 p-8 sm:p-10 lg:p-12">
+        <motion.p
+          initial={false}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.45 }}
+          className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-stone-400"
         >
-          {/* FormSubmit Settings */}
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_subject" value="New message from your portfolio!" />
-          <input type="hidden" name="_template" value="table" />
-          <input type="hidden" name="_autoresponse" value="Thanks for reaching out! I’ll get back to you shortly." />
+          Contact
+        </motion.p>
 
-          <div className="mb-5">
-            <label htmlFor="name" className="block mb-1 text-[#D4C9C1]">
-              Name
-            </label>
-            <input
-              type="text"
-              name="name"
-              required
-              className="w-full p-3 rounded-md bg-[#121212] border border-[#2A2A2A] 
-              text-[#E0D7CF] focus:outline-none focus:border-[#5C3D2E]"
-              placeholder="Your Name"
-            />
-          </div>
+        <motion.h2
+          initial={false}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.05 }}
+          className="text-3xl font-bold text-stone-100 sm:text-4xl"
+        >
+          Let’s connect
+        </motion.h2>
 
-          <div className="mb-5">
-            <label htmlFor="email" className="block mb-1 text-[#D4C9C1]">
-              Email
-            </label>
-            <input
-              type="email"
-              name="email"
-              required
-              className="w-full p-3 rounded-md bg-[#121212] border border-[#2A2A2A] 
-              text-[#E0D7CF] focus:outline-none focus:border-[#5C3D2E]"
-              placeholder="Your Email"
-            />
-          </div>
+        <motion.p
+          initial={false}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="mt-6 max-w-3xl text-lg leading-8 text-stone-300"
+        >
+          {profile.availability}
+        </motion.p>
 
-          <div className="mb-6">
-            <label htmlFor="message" className="block mb-1 text-[#D4C9C1]">
-              Message
-            </label>
-            <textarea
-              name="message"
-              rows={4}
-              required
-              className="w-full p-3 rounded-md bg-[#121212] border border-[#2A2A2A] 
-              text-[#E0D7CF] focus:outline-none focus:border-[#5C3D2E]"
-              placeholder="Your Message"
-            ></textarea>
-          </div>
+        <motion.p
+          initial={false}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.15 }}
+          className="mt-4 max-w-3xl text-base leading-8 text-stone-400"
+        >
+          If you would like to discuss an opportunity, collaborate on a project,
+          or connect professionally, feel free to reach out.
+        </motion.p>
 
-          <button
-            type="submit"
-            className="w-full bg-[#5C3D2E] text-white py-3 rounded-md font-semibold 
-            hover:bg-[#4A2F23] transition"
-          >
-            Send Message
-          </button>
-        </form>
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
+          {contactLinks.map((link, index) => {
+            const Icon = link.icon;
 
-        <p className="text-center mt-8 text-[#D4C9C1]">
-          Or reach me directly at:{" "}
-          <a
-            href="mailto:kevinas530@gmail.com"
-            className="text-[#5C3D2E] hover:underline"
-          >
-            kevinas530@gmail.com
-          </a>
-        </p>
+            return (
+              <motion.a
+                key={link.title}
+                href={link.href}
+                target={link.newTab ? "_blank" : undefined}
+                rel={link.newTab ? "noreferrer" : undefined}
+                initial={false}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{ duration: 0.45, delay: index * 0.08 }}
+                className="group min-w-0 rounded-2xl border border-stone-800 bg-stone-950/60 p-6 transition hover:border-stone-600 hover:bg-stone-900/70"
+              >
+                <div className="flex min-w-0 items-start gap-4">
+                  <div className="rounded-xl border border-stone-700 bg-stone-900 p-3 text-blue-400">
+                    <Icon aria-hidden="true" size={20} />
+                  </div>
 
-        <div className="mt-12 w-24 h-1 bg-[#5C3D2E] mx-auto rounded-full"></div>
+                  <div className="min-w-0">
+                    <p className="text-sm font-medium uppercase tracking-[0.16em] text-stone-400">
+                      {link.title}
+                    </p>
+                    <p className="mt-2 break-words text-base font-medium text-stone-100 transition group-hover:text-blue-400">
+                      {link.value}
+                    </p>
+                  </div>
+                </div>
+              </motion.a>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

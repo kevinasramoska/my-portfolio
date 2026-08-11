@@ -30,7 +30,7 @@ TypeScript
 Tailwind CSS  
 
 Framework / Tooling  
-Vite  
+Next.js App Router
 
 Deployment  
 Vercel  
@@ -53,19 +53,15 @@ Git + GitHub
 
 # Project Structure
 
+```text
 src
-components
-Hero
-Projects
-Experience
-Skills
-Contact
+├── app — routing, metadata, and global styles
+├── components — reusable portfolio sections
+└── content — canonical profile and project data
 
-pages
-Home
-
-assets
-styles
+public — résumé and social assets
+docs — audit, roadmap, and implementation backlog
+```
 
 The application is organized into reusable React components for maintainability and scalability.
 
@@ -89,14 +85,36 @@ Styling is handled through Tailwind CSS utility classes.
 
 Clone the repository
 
-
 Navigate to the project directory
 
+```bash
 cd my-portfolio
+```
 
+Install dependencies and start the development server
 
-Install dependencies
+```bash
+npm ci
+npm run dev
+```
 
+Quality checks:
+
+```bash
+npm run lint
+npm run typecheck
+npm run build
+```
+
+## Updating the Resume
+
+Edit `resume/kevinas-ramoska-resume.html`, then generate the tagged PDF served by the portfolio:
+
+```bash
+npm run resume:build
+```
+
+The script uses Google Chrome or Chromium. Set `CHROME_PATH` if the executable is not installed in a standard location.
 
 
 ---
@@ -144,4 +162,3 @@ https://linkedin.com/in/kevinasramoska
 # License
 
 This project is open source and available under the MIT License.
-
