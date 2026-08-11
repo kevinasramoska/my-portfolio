@@ -28,6 +28,7 @@ export const projects = [
       "TypeScript",
       "Testcontainers",
     ],
+    programmingLanguages: ["Java", "TypeScript"],
     architecture: {
       summary:
         "The Next.js client calls a secured Spring MVC API. Transaction writes update PostgreSQL holdings and the audit ledger atomically, while a separate post-commit path records portfolio snapshots. Market prices come from a CoinGecko-compatible API.",
@@ -128,6 +129,7 @@ export const projects = [
       "SQL Server",
       "Razor Views",
     ],
+    programmingLanguages: ["C#"],
     architecture: {
       summary:
         "Razor Views submit server-rendered MVC workflows. ASP.NET Core Identity provides authentication and roles, application logic scopes actions by role and resource ownership, and Entity Framework Core persists property, tenancy, maintenance, and Identity data in SQL Server.",

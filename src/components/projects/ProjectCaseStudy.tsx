@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 import type { Project } from "@/types/content";
 import ProjectArchitecture from "@/components/projects/ProjectArchitecture";
 
@@ -28,13 +28,25 @@ export default function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
     <>
       <section className="border-b border-stone-800 bg-stone-950 px-6 pb-16 pt-28 sm:px-10 lg:px-16 lg:pb-20">
         <div className="mx-auto max-w-6xl">
-          <Link
-            href="/#projects"
-            className="inline-flex min-h-11 items-center gap-2 rounded-lg text-sm font-semibold text-stone-300 transition hover:text-blue-400"
-          >
-            <ArrowLeft aria-hidden="true" size={17} />
-            Back to featured projects
-          </Link>
+          <nav aria-label="Breadcrumb">
+            <ol className="flex min-h-11 flex-wrap items-center gap-2 text-sm font-semibold text-stone-400">
+              <li>
+                <Link href="/" className="transition hover:text-blue-400">
+                  Home
+                </Link>
+              </li>
+              <li aria-hidden="true">/</li>
+              <li>
+                <Link href="/#projects" className="transition hover:text-blue-400">
+                  Featured projects
+                </Link>
+              </li>
+              <li aria-hidden="true">/</li>
+              <li aria-current="page" className="text-stone-200">
+                {project.title}
+              </li>
+            </ol>
+          </nav>
 
           <p className="mt-8 text-sm font-semibold uppercase tracking-[0.2em] text-blue-400">
             {project.eyebrow} case study
