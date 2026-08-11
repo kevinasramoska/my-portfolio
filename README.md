@@ -106,6 +106,16 @@ npm run typecheck
 npm run build
 ```
 
+Browser and automated accessibility tests:
+
+```bash
+npx playwright install chromium
+npm run test:e2e
+```
+
+The Playwright suite checks the homepage and project case studies in Chromium,
+including the responsive navigation and automated WCAG A/AA scans with axe.
+
 Production bundle measurements and methodology are recorded in
 [`docs/PERFORMANCE.md`](docs/PERFORMANCE.md).
 
