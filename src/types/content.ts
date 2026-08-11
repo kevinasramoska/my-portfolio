@@ -25,6 +25,7 @@ export type Project = {
   featured: boolean;
   highlights: readonly string[];
   technologies: readonly string[];
+  programmingLanguages: readonly string[];
   architecture: {
     summary: string;
     steps: readonly ArchitectureStep[];
