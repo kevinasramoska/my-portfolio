@@ -1,7 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
-
 const skillGroups = [
   {
     title: "Core Stack",
@@ -67,46 +63,24 @@ export default function Skills() {
   return (
     <section id="skills" className="px-6 py-24 sm:px-10 lg:px-16">
       <div className="mx-auto max-w-5xl rounded-3xl border border-stone-800 bg-stone-900/40 p-8 sm:p-10 lg:p-12">
-        <motion.p
-          initial={false}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.45 }}
-          className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-stone-400"
-        >
+        <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-stone-400">
           Skills
-        </motion.p>
+        </p>
 
-        <motion.h2
-          initial={false}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5, delay: 0.05 }}
-          className="text-3xl font-bold text-stone-100 sm:text-4xl"
-        >
+        <h2 className="text-3xl font-bold text-stone-100 sm:text-4xl">
           Technologies I use to design, build, and ship software
-        </motion.h2>
+        </h2>
 
-        <motion.p
-          initial={false}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="mt-6 max-w-3xl text-lg leading-8 text-stone-300"
-        >
+        <p className="mt-6 max-w-3xl text-lg leading-8 text-stone-300">
           My strongest focus is backend and full-stack development using Java,
           Spring Boot, .NET, PostgreSQL, React, and modern tooling for building
           practical, production-ready applications.
-        </motion.p>
+        </p>
 
         <div className="mt-10 grid gap-6 md:grid-cols-2">
-          {skillGroups.map((group, index) => (
-            <motion.div
+          {skillGroups.map((group) => (
+            <div
               key={group.title}
-              initial={false}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.25 }}
-              transition={{ duration: 0.45, delay: index * 0.08 }}
               className="rounded-2xl border border-stone-800 bg-stone-950/60 p-6 sm:p-7"
             >
               <h3 className="text-xl font-semibold text-stone-100">
@@ -127,7 +101,7 @@ export default function Skills() {
                   </span>
                 ))}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

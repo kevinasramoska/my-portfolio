@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Mail, Github, Linkedin, FileText } from "lucide-react";
 import { profile } from "@/content/profile";
 
@@ -39,61 +36,33 @@ export default function Contact() {
   return (
     <section id="contact" className="px-6 py-24 sm:px-10 lg:px-16">
       <div className="mx-auto max-w-5xl rounded-3xl border border-stone-800 bg-stone-900/40 p-8 sm:p-10 lg:p-12">
-        <motion.p
-          initial={false}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.45 }}
-          className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-stone-400"
-        >
+        <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-stone-400">
           Contact
-        </motion.p>
+        </p>
 
-        <motion.h2
-          initial={false}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5, delay: 0.05 }}
-          className="text-3xl font-bold text-stone-100 sm:text-4xl"
-        >
+        <h2 className="text-3xl font-bold text-stone-100 sm:text-4xl">
           Let’s connect
-        </motion.h2>
+        </h2>
 
-        <motion.p
-          initial={false}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="mt-6 max-w-3xl text-lg leading-8 text-stone-300"
-        >
+        <p className="mt-6 max-w-3xl text-lg leading-8 text-stone-300">
           {profile.availability}
-        </motion.p>
+        </p>
 
-        <motion.p
-          initial={false}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5, delay: 0.15 }}
-          className="mt-4 max-w-3xl text-base leading-8 text-stone-400"
-        >
+        <p className="mt-4 max-w-3xl text-base leading-8 text-stone-400">
           If you would like to discuss an opportunity, collaborate on a project,
           or connect professionally, feel free to reach out.
-        </motion.p>
+        </p>
 
         <div className="mt-10 grid gap-6 md:grid-cols-2">
-          {contactLinks.map((link, index) => {
+          {contactLinks.map((link) => {
             const Icon = link.icon;
 
             return (
-              <motion.a
+              <a
                 key={link.title}
                 href={link.href}
                 target={link.newTab ? "_blank" : undefined}
                 rel={link.newTab ? "noreferrer" : undefined}
-                initial={false}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.25 }}
-                transition={{ duration: 0.45, delay: index * 0.08 }}
                 className="group min-w-0 rounded-2xl border border-stone-800 bg-stone-950/60 p-6 transition hover:border-stone-600 hover:bg-stone-900/70"
               >
                 <div className="flex min-w-0 items-start gap-4">
@@ -110,7 +79,7 @@ export default function Contact() {
                     </p>
                   </div>
                 </div>
-              </motion.a>
+              </a>
             );
           })}
         </div>

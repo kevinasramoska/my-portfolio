@@ -106,6 +106,9 @@ npm run typecheck
 npm run build
 ```
 
+Production bundle measurements and methodology are recorded in
+[`docs/PERFORMANCE.md`](docs/PERFORMANCE.md).
+
 ## Updating the Resume
 
 Edit `resume/kevinas-ramoska-resume.html`, then generate the tagged PDF served by the portfolio:
