@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kevinas Ramoska - Backend Software Engineer Resume</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 11mm 13mm;
+      }
+
+      :root {
+        color-scheme: light;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #18181b;
+        background: #ffffff;
+        font-size: 10pt;
+        line-height: 1.28;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      header {
+        border-bottom: 1.5px solid #27272a;
+        padding-bottom: 8px;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        font-size: 23pt;
+        line-height: 1;
+        letter-spacing: -0.02em;
+      }
+
+      .role {
+        margin-top: 4px;
+        font-size: 11.2pt;
+        font-weight: 700;
+      }
+
+      .contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3px 12px;
+        margin-top: 7px;
+        font-size: 9.1pt;
+      }
+
+      a {
+        color: #1d4ed8;
+        text-decoration: none;
+      }
+
+      section {
+        margin-top: 10px;
+      }
+
+      h2 {
+        border-bottom: 1px solid #a1a1aa;
+        padding-bottom: 2px;
+        font-size: 11pt;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .summary {
+        margin-top: 5.5px;
+      }
+
+      .entry {
+        margin-top: 6.5px;
+        break-inside: avoid;
+      }
+
+      .entry-heading {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      h3 {
+        font-size: 10.4pt;
+      }
+
+      .meta {
+        flex: 0 0 auto;
+        color: #3f3f46;
+        font-size: 9pt;
+        font-weight: 700;
+      }
+
+      .subheading {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        margin-top: 1px;
+        color: #3f3f46;
+        font-size: 9.1pt;
+      }
+
+      ul {
+        margin: 3px 0 0;
+        padding-left: 16px;
+      }
+
+      li {
+        margin-top: 2px;
+      }
+
+      .project-link {
+        margin-top: 1px;
+        font-size: 8.9pt;
+      }
+
+      .two-column {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: 0.9fr 1.35fr 1.1fr;
+        gap: 6px 16px;
+        margin-top: 5px;
+      }
+
+      .skill-group strong {
+        display: block;
+        margin-bottom: 1px;
+      }
+
+      .compact-row {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        margin-top: 5px;
+      }
+
+      .muted {
+        color: #52525b;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Kevinas Ramoska</h1>
+      <p class="role">Backend Software Engineer | Java | Spring Boot | .NET | React</p>
+      <div class="contact" aria-label="Contact details">
+        <span>Kildare, Ireland</span>
+        <a href="tel:+353899511136">+353 89 951 1136</a>
+        <a href="mailto:kevinasramoska@gmail.com">kevinasramoska@gmail.com</a>
+        <a href="https://kevinasramoska-portfolio.vercel.app">Portfolio</a>
+        <a href="https://www.linkedin.com/in/kevinasramoska">LinkedIn</a>
+        <a href="https://github.com/kevinasramoska">GitHub</a>
+      </div>
+    </header>
+
+    <main>
+      <section aria-labelledby="summary-heading">
+        <h2 id="summary-heading">Summary</h2>
+        <p class="summary">
+          Backend-focused software engineer with General Motors experience building Java and Spring Boot
+          services, REST APIs, Kafka workflows, and React applications. Experienced with SQL data models,
+          authentication, automated testing, Docker, CI/CD, and production diagnostics.
+        </p>
+      </section>
+
+      <section aria-labelledby="experience-heading">
+        <h2 id="experience-heading">Experience</h2>
+
+        <article class="entry">
+          <div class="entry-heading">
+            <h3>General Motors</h3>
+            <span class="meta">Sep 2023 - May 2024</span>
+          </div>
+          <div class="subheading">
+            <span>Software Engineer (Part-Time)</span>
+            <span>Dublin, Ireland</span>
+          </div>
+          <ul>
+            <li>Developed Java and Spring Boot backend services, REST APIs, and Kafka messaging workflows for enterprise systems.</li>
+            <li>Added JUnit and Mockito tests plus ELK logging and monitoring to improve service reliability and diagnosis.</li>
+            <li>Investigated production issues through logs and root-cause analysis; contributed to Docker, CI/CD, code review, and Agile delivery.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry-heading">
+            <h3>General Motors</h3>
+            <span class="meta">Jan 2023 - Sep 2023</span>
+          </div>
+          <div class="subheading">
+            <span>Software Engineer Intern</span>
+            <span>Dublin, Ireland</span>
+          </div>
+          <ul>
+            <li>Built a React internal application that replaced a legacy workflow and implemented Azure AD authentication with Microsoft MSAL.</li>
+            <li>Developed Spring Boot integrations with external APIs and SQL repositories, including backend data comparison and synchronisation logic.</li>
+            <li>Added ELK logging, helped resolve Kafka producer/consumer issues, and tested service behaviour with JUnit and Mockito.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section aria-labelledby="projects-heading">
+        <h2 id="projects-heading">Selected Projects</h2>
+
+        <div class="two-column">
+          <article class="entry">
+            <h3>Crypto Portfolio Tracker</h3>
+            <p class="project-link">
+              <a href="https://github.com/kevinasramoska/crypto-portfolio-app">github.com/kevinasramoska/crypto-portfolio-app</a>
+            </p>
+            <ul>
+              <li>Built a Spring Boot/PostgreSQL transaction ledger with JWT security, Flyway migrations, market data, portfolio snapshots, and CSV export.</li>
+              <li>Tested backend behaviour with JUnit, MockMvc, and PostgreSQL Testcontainers; built the frontend with Next.js, React, and TypeScript.</li>
+            </ul>
+          </article>
+
+          <article class="entry">
+            <h3>RentRight Property Management</h3>
+            <p class="project-link">
+              <a href="https://github.com/kevinasramoska/RentRight">github.com/kevinasramoska/RentRight</a>
+            </p>
+            <ul>
+              <li>Built an ASP.NET Core MVC application with Identity, Entity Framework Core, SQL Server, and role-specific Admin/Landlord/Tenant workflows.</li>
+              <li>Implemented property, tenancy, and maintenance-request flows with access scoped to owned properties and active tenancies.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Technical Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-group"><strong>Languages</strong>Java, C#, TypeScript, JavaScript, SQL</div>
+          <div class="skill-group"><strong>Frameworks</strong>Spring Boot, React, Next.js, ASP.NET Core MVC, JPA/Hibernate, EF Core</div>
+          <div class="skill-group"><strong>Data</strong>PostgreSQL, SQL Server, Flyway, relational modelling</div>
+          <div class="skill-group"><strong>Testing</strong>JUnit, Mockito, MockMvc, Testcontainers, xUnit</div>
+          <div class="skill-group"><strong>Platform</strong>Docker, GitHub Actions, CI/CD, Azure, ELK, Kafka</div>
+          <div class="skill-group"><strong>Architecture</strong>REST APIs, authentication, authorisation, event-driven workflows</div>
+        </div>
+      </section>
+
+      <section aria-labelledby="education-heading">
+        <h2 id="education-heading">Education &amp; Certification</h2>
+        <div class="compact-row">
+          <p><strong>Maynooth University</strong> - BSc Computer Science &amp; Software Engineering</p>
+          <span class="meta">2020 - 2024</span>
+        </div>
+        <div class="compact-row">
+          <p><strong>Microsoft Azure Fundamentals (AZ-900)</strong></p>
+          <span class="meta">2023</span>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

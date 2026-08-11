@@ -14,7 +14,7 @@ export const profile = {
   links: {
     github: "https://github.com/kevinasramoska",
     linkedin: "https://www.linkedin.com/in/kevinasramoska",
-    resume: "/kevinas-ramoska_Resume.pdf",
+    resume: "/kevinas-ramoska-resume.pdf",
   },
   coreSkills: [
     "Java",

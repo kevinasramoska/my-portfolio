@@ -98,6 +98,16 @@ npm ci
 npm run dev
 ```
 
+## Updating the Resume
+
+Edit `resume/kevinas-ramoska-resume.html`, then generate the tagged PDF served by the portfolio:
+
+```bash
+npm run resume:build
+```
+
+The script uses Google Chrome or Chromium. Set `CHROME_PATH` if the executable is not installed in a standard location.
+
 
 ---
 
