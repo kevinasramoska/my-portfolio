@@ -13,7 +13,7 @@ export default function Footer() {
           <a
             href={profile.links.github}
             target="_blank"
-            className="hover:text-[#5C3D2E] transition"
+            className="inline-flex min-h-11 items-center transition hover:text-blue-400"
             rel="noreferrer"
           >
             GitHub
@@ -22,7 +22,7 @@ export default function Footer() {
           <a
             href={profile.links.linkedin}
             target="_blank"
-            className="hover:text-[#5C3D2E] transition"
+            className="inline-flex min-h-11 items-center transition hover:text-blue-400"
             rel="noreferrer"
           >
             LinkedIn
@@ -32,14 +32,14 @@ export default function Footer() {
             href={profile.links.resume}
             target="_blank"
             rel="noreferrer"
-            className="hover:text-[#5C3D2E] transition"
+            className="inline-flex min-h-11 items-center transition hover:text-blue-400"
           >
             View Resume
           </a>
         </div>
 
         {/* Accent bar */}
-        <div className="mt-6 w-20 h-1 bg-[#5C3D2E] mx-auto rounded-full"></div>
+        <div className="mx-auto mt-6 h-1 w-20 rounded-full bg-blue-500"></div>
       </div>
     </footer>
   );

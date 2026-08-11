@@ -9,7 +9,7 @@ export default function Projects() {
     <section id="projects" className="px-6 py-24 sm:px-10 lg:px-16">
       <div className="mx-auto max-w-5xl rounded-3xl border border-stone-800 bg-stone-900/40 p-8 sm:p-10 lg:p-12">
         <motion.p
-          initial={{ opacity: 0, y: 18 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.45 }}
@@ -19,7 +19,7 @@ export default function Projects() {
         </motion.p>
 
         <motion.h2
-          initial={{ opacity: 0, y: 18 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5, delay: 0.05 }}
@@ -29,7 +29,7 @@ export default function Projects() {
         </motion.h2>
 
         <motion.p
-          initial={{ opacity: 0, y: 18 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5, delay: 0.1 }}
@@ -44,7 +44,7 @@ export default function Projects() {
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
-              initial={{ opacity: 0, y: 18 }}
+              initial={false}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.25 }}
               transition={{ duration: 0.45, delay: index * 0.08 }}
@@ -69,9 +69,9 @@ export default function Projects() {
                     href={project.links.repository}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-xl border border-stone-700 px-4 py-2 text-sm font-medium text-stone-300 transition hover:border-stone-500 hover:bg-stone-800"
+                    className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-stone-700 px-4 py-2 text-sm font-medium text-stone-300 transition hover:border-stone-500 hover:bg-stone-800"
                   >
-                    <Github size={16} />
+                    <Github aria-hidden="true" size={16} />
                     GitHub
                   </a>
 
@@ -80,9 +80,9 @@ export default function Projects() {
                       href={project.links.demo}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded-xl bg-blue-500 px-4 py-2 text-sm font-medium text-white transition hover:bg-blue-400"
+                      className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-blue-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-blue-700"
                     >
-                      <ExternalLink size={16} />
+                      <ExternalLink aria-hidden="true" size={16} />
                       Live Demo
                     </a>
                   ) : null}

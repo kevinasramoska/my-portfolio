@@ -17,7 +17,7 @@ export default function ExperienceTimeline() {
     <section id="experience" className="px-6 py-24 sm:px-10 lg:px-16">
       <div className="mx-auto max-w-5xl rounded-3xl border border-stone-800 bg-stone-900/40 p-8 sm:p-10 lg:p-12">
         <motion.p
-          initial={{ opacity: 0, y: 18 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.45 }}
@@ -27,7 +27,7 @@ export default function ExperienceTimeline() {
         </motion.p>
 
         <motion.h2
-          initial={{ opacity: 0, y: 18 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5, delay: 0.05 }}
@@ -37,7 +37,7 @@ export default function ExperienceTimeline() {
         </motion.h2>
 
         <motion.p
-          initial={{ opacity: 0, y: 18 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5, delay: 0.1 }}
@@ -51,7 +51,7 @@ export default function ExperienceTimeline() {
           {experiences.map((item, index) => (
             <motion.div
               key={`${item.place}-${item.year}`}
-              initial={{ opacity: 0, y: 18 }}
+              initial={false}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.25 }}
               transition={{ duration: 0.45, delay: index * 0.08 }}
