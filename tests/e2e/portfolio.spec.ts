@@ -19,6 +19,10 @@ const routes = [
     path: "/projects/rentright",
     heading: "RentRight Property Management",
   },
+  {
+    path: "/writing/designing-safe-transaction-correction",
+    heading: "Designing safe transaction correction",
+  },
 ] as const;
 
 async function expectNoAccessibilityViolations(
@@ -74,6 +78,59 @@ test.describe("portfolio routes", () => {
         name: "Crypto Portfolio Tracker",
       }),
     ).toBeVisible();
+  });
+
+  test("homepage presents verified judo career profiles", async ({ page }) => {
+    await page.goto("/#judo");
+
+    await expect(
+      page.getByRole("heading", {
+        level: 2,
+        name: "On the mat since six. Competing for Ireland.",
+      }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("link", { name: "Official IJF profile" }),
+    ).toHaveAttribute("href", "https://www.ijf.org/judoka/45746");
+    await expect(
+      page.getByRole("link", { name: "JudoInside results" }),
+    ).toHaveAttribute(
+      "href",
+      "https://judoinside.com/judoka/118100/Kevinas_Ramoska/judo-career",
+    );
+  });
+
+  test("homepage presents current focus, credentials, and writing", async ({
+    page,
+  }) => {
+    await page.goto("/#current");
+
+    await expect(
+      page.getByRole("heading", {
+        name: "Building reliable business software and sharpening the systems around it",
+      }),
+    ).toBeVisible();
+    await expect(page.getByRole("link", { name: "View credential" })).toHaveAttribute(
+      "href",
+      "https://www.linkedin.com/in/kramoska/details/certifications/",
+    );
+
+    await page.goto("/#writing");
+    await expect(page.getByRole("link", { name: "Read article" })).toHaveCount(4);
+  });
+
+  test("case studies use real product screenshots and verified metrics", async ({
+    page,
+  }) => {
+    await page.goto("/projects/crypto-portfolio-tracker");
+
+    await expect(
+      page.getByRole("img", {
+        name: "CryptoTracker dashboard showing market prices and portfolio profit and loss",
+      }).first(),
+    ).toBeVisible();
+    await expect(page.getByText("80", { exact: true })).toBeVisible();
+    await expect(page.getByText("passing checks", { exact: true })).toBeVisible();
   });
 });
 

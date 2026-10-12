@@ -13,6 +13,20 @@ export type EngineeringDecision = {
   tradeOff: string;
 };
 
+export type ProjectScreenshot = {
+  src: `/${string}`;
+  alt: string;
+  caption: string;
+  width: number;
+  height: number;
+};
+
+export type ProjectMetric = {
+  value: string;
+  label: string;
+  detail: string;
+};
+
 export type Project = {
   slug: string;
   status: ProjectStatus;
@@ -25,6 +39,8 @@ export type Project = {
   outcome: string;
   featured: boolean;
   highlights: readonly string[];
+  screenshots: readonly ProjectScreenshot[];
+  metrics: readonly ProjectMetric[];
   technologies: readonly string[];
   programmingLanguages: readonly string[];
   architecture: {

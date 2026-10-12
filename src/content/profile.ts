@@ -14,7 +14,12 @@ export const profile = {
   links: {
     github: "https://github.com/kevinasramoska",
     linkedin: "https://www.linkedin.com/in/kramoska/",
+    certification:
+      "https://www.linkedin.com/in/kramoska/details/certifications/",
     resume: "/kevinas-ramoska-resume.pdf",
+    ijf: "https://www.ijf.org/judoka/45746",
+    judoInside:
+      "https://judoinside.com/judoka/118100/Kevinas_Ramoska/judo-career",
   },
   coreSkills: [
     "C# / .NET",

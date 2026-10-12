@@ -15,7 +15,12 @@ export const homeStructuredData = {
       jobTitle: profile.role,
       description: profile.metaDescription,
       url: profile.siteUrl,
-      sameAs: [profile.links.github, profile.links.linkedin],
+      sameAs: [
+        profile.links.github,
+        profile.links.linkedin,
+        profile.links.ijf,
+        profile.links.judoInside,
+      ],
       knowsAbout: profile.coreSkills,
     },
     {

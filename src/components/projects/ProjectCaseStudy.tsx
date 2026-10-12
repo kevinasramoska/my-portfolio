@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowLeft, CheckCircle2, ExternalLink, Github } from "lucide-react";
 import type { Project } from "@/types/content";
 import ProjectArchitecture from "@/components/projects/ProjectArchitecture";
+import ProjectGallery from "@/components/projects/ProjectGallery";
 import ProjectPreview from "@/components/projects/ProjectPreview";
 
 type ProjectCaseStudyProps = {
@@ -93,6 +94,36 @@ export default function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
 
       <div className="px-6 py-16 sm:px-10 lg:px-16 lg:py-20">
         <div className="mx-auto max-w-6xl space-y-20">
+          <section aria-labelledby="evidence-heading">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-300">
+              Verified evidence
+            </p>
+            <h2
+              id="evidence-heading"
+              className="mt-3 text-3xl font-bold text-stone-100"
+            >
+              Measured from the repository
+            </h2>
+            <div className="mt-8 grid gap-4 sm:grid-cols-3">
+              {project.metrics.map((metric) => (
+                <article
+                  key={metric.label}
+                  className="rounded-2xl border border-emerald-400/15 bg-emerald-400/[0.035] p-6"
+                >
+                  <p className="text-4xl font-black tracking-tight text-white">
+                    {metric.value}
+                  </p>
+                  <h3 className="mt-2 font-semibold text-emerald-200">
+                    {metric.label}
+                  </h3>
+                  <p className="mt-3 text-sm leading-6 text-stone-400">
+                    {metric.detail}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </section>
+
           <section aria-labelledby="context-heading">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-400">
               At a glance
@@ -117,6 +148,25 @@ export default function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
                   <p className="mt-4 text-sm leading-7 text-stone-400">{item.text}</p>
                 </article>
               ))}
+            </div>
+          </section>
+
+          <section aria-labelledby="gallery-heading">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-400">
+              Product screens
+            </p>
+            <h2
+              id="gallery-heading"
+              className="mt-3 text-3xl font-bold text-stone-100"
+            >
+              The running application
+            </h2>
+            <p className="mt-4 max-w-3xl text-base leading-7 text-stone-400">
+              Captured from the real application with local development data.
+              Open any image to inspect it at full size.
+            </p>
+            <div className="mt-8">
+              <ProjectGallery screenshots={project.screenshots} />
             </div>
           </section>
 

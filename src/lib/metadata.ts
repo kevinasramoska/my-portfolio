@@ -11,3 +11,7 @@ export function projectPath(slug: string) {
 export function projectSocialImagePath(slug: string) {
   return `${projectPath(slug)}/opengraph-image` as const;
 }
+
+export function writingPath(slug: string) {
+  return `/writing/${slug}` as const;
+}

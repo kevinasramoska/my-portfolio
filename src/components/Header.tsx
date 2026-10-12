@@ -9,7 +9,9 @@ const navigation = [
   { label: "Experience", href: "/#experience" },
   { label: "Projects", href: "/#projects" },
   { label: "Skills", href: "/#skills" },
+  { label: "Writing", href: "/#writing" },
   { label: "About", href: "/#about" },
+  { label: "Judo", href: "/#judo" },
   { label: "Contact", href: "/#contact" },
 ] as const;
 

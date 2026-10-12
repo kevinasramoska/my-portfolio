@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { publishedProjects } from "@/content/projects";
-import { absoluteUrl, projectPath } from "@/lib/metadata";
+import { articles } from "@/content/articles";
+import { absoluteUrl, projectPath, writingPath } from "@/lib/metadata";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -13,6 +14,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: absoluteUrl(projectPath(project.slug)),
       changeFrequency: "monthly" as const,
       priority: project.featured ? 0.8 : 0.6,
+    })),
+    ...articles.map((article) => ({
+      url: absoluteUrl(writingPath(article.slug)),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
     })),
   ];
 }

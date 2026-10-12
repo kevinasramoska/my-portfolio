@@ -1,4 +1,4 @@
-import { Award, GraduationCap, Repeat2, Shield, Target } from "lucide-react";
+import { ArrowDownRight, Award, Repeat2, Shield, Target } from "lucide-react";
 
 export default function About() {
   return (
@@ -31,15 +31,6 @@ export default function About() {
               </p>
             </div>
 
-            <div className="mt-8 flex items-center gap-4 rounded-2xl border border-white/[0.08] bg-zinc-950/45 p-4">
-              <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-blue-400/10 text-blue-300">
-                <GraduationCap aria-hidden="true" size={21} />
-              </div>
-              <div>
-                <p className="font-semibold text-stone-100">BSc Computer Science &amp; Software Engineering</p>
-                <p className="mt-1 text-sm text-stone-500">Maynooth University · 2020–2024</p>
-              </div>
-            </div>
           </div>
 
           <aside className="relative overflow-hidden rounded-[2rem] border border-emerald-400/20 bg-[radial-gradient(circle_at_top_right,rgba(52,211,153,0.16),transparent_42%),linear-gradient(145deg,rgba(16,31,28,0.92),rgba(9,9,11,0.95))] p-7 sm:p-10">
@@ -78,6 +69,14 @@ export default function About() {
                 );
               })}
             </div>
+
+            <a
+              href="#judo"
+              className="mt-6 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-emerald-300 transition hover:text-emerald-200"
+            >
+              Explore my judo career
+              <ArrowDownRight aria-hidden="true" size={17} />
+            </a>
           </aside>
         </div>
       </div>

@@ -22,6 +22,46 @@ export const projects = [
       "JWT authentication, per-user data boundaries, rate limits, and production secret validation protect the API.",
       "JUnit, MockMvc, PostgreSQL Testcontainers, Vitest, and Playwright cover backend and frontend behaviour.",
     ],
+    screenshots: [
+      {
+        src: "/projects/crypto-portfolio-tracker/dashboard.png",
+        alt: "CryptoTracker dashboard showing market prices and portfolio profit and loss",
+        caption: "Portfolio dashboard with market prices, holdings, and profit-and-loss totals.",
+        width: 1440,
+        height: 1000,
+      },
+      {
+        src: "/projects/crypto-portfolio-tracker/transaction-workflow.png",
+        alt: "CryptoTracker transaction correction form for a Bitcoin purchase",
+        caption: "Transaction correction workflow with validated asset, quantity, and price fields.",
+        width: 1230,
+        height: 146,
+      },
+      {
+        src: "/projects/crypto-portfolio-tracker/authentication.png",
+        alt: "CryptoTracker login screen",
+        caption: "JWT-backed authentication entry point.",
+        width: 1440,
+        height: 1000,
+      },
+    ],
+    metrics: [
+      {
+        value: "80",
+        label: "passing checks",
+        detail: "57 backend tests, 22 frontend tests, and one full-stack E2E flow verified locally.",
+      },
+      {
+        value: "17",
+        label: "documented routes",
+        detail: "Health, authentication, market, portfolio, and transaction API operations.",
+      },
+      {
+        value: "3",
+        label: "CI jobs",
+        detail: "Separate backend, frontend, and full-stack Playwright jobs in GitHub Actions.",
+      },
+    ],
     technologies: [
       "Java",
       "Spring Boot",
@@ -117,12 +157,59 @@ export const projects = [
     problem:
       "Property management joins public listings with sensitive tenancy and maintenance data. Each workflow must expose the right records and actions to administrators, property owners, and active tenants without leaking another user's data.",
     outcome:
-      "The result is a working role-aware platform where administrators, landlords, and tenants see only the records and actions their relationship to a property permits.",
+      "The result is a role-aware MVC platform whose service and controller boundaries distinguish administrator, landlord, and tenant access to property, tenancy, and maintenance data.",
     featured: true,
     highlights: [
       "ASP.NET Core Identity separates Admin, Landlord, and Tenant capabilities.",
       "Ownership and active-tenancy rules scope property and maintenance workflows.",
       "xUnit coverage exercises services, controller outcomes, validation, and access-control behaviour.",
+    ],
+    screenshots: [
+      {
+        src: "/projects/rentright/dashboard.png",
+        alt: "RentRight administrator dashboard with user and property totals",
+        caption: "Administrator dashboard with direct access to property, tenancy, and maintenance workflows.",
+        width: 1440,
+        height: 1000,
+      },
+      {
+        src: "/projects/rentright/property-management.png",
+        alt: "RentRight property management list showing a Dublin apartment",
+        caption: "Role-aware property management list with detail, edit, and delete actions.",
+        width: 1440,
+        height: 1000,
+      },
+      {
+        src: "/projects/rentright/maintenance-requests.png",
+        alt: "RentRight maintenance request queue showing an in-progress repair",
+        caption: "Maintenance queue scoped for administrators, landlords, and tenants.",
+        width: 1440,
+        height: 1000,
+      },
+      {
+        src: "/projects/rentright/authentication.png",
+        alt: "RentRight ASP.NET Core Identity login screen",
+        caption: "ASP.NET Core Identity authentication screen.",
+        width: 1440,
+        height: 1000,
+      },
+    ],
+    metrics: [
+      {
+        value: "239",
+        label: "passing tests",
+        detail: "xUnit service, controller, domain, API convention, and authorization checks verified locally.",
+      },
+      {
+        value: "3",
+        label: "supported roles",
+        detail: "Admin, Landlord, and Tenant workflows with resource-level access checks.",
+      },
+      {
+        value: "3",
+        label: "CI gates",
+        detail: "Restore, release build, and test stages run in GitHub Actions.",
+      },
     ],
     technologies: [
       "C#",
@@ -194,6 +281,7 @@ export const projects = [
     ],
     limitations: [
       "A REST API and React client have not been built; the current application is MVC with Razor Views.",
+      "The current Razor property-create form resolves to the JSON API route and returns 415; its MVC route needs to be disambiguated.",
       "SQL Server-backed integration tests and broader authorisation coverage are still planned.",
       "Tenant invitation, immutable maintenance status history, optimistic concurrency, and pagination remain future work.",
       "Application/service-layer extraction is still listed in the repository roadmap.",
