@@ -22,6 +22,7 @@ export type Project = {
   metaDescription: string;
   role: string;
   problem: string;
+  outcome: string;
   featured: boolean;
   highlights: readonly string[];
   technologies: readonly string[];

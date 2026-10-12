@@ -14,6 +14,8 @@ export const projects = [
       "Designed and implemented the backend, data model, security boundaries, automated tests, operational checks, and the Next.js user interface.",
     problem:
       "A portfolio tracker has to preserve an auditable history while keeping current holdings and profit-and-loss calculations consistent when transactions are created, corrected, or removed.",
+    outcome:
+      "The finished workflow keeps stored holdings, realised profit and loss, and the audit ledger aligned—even when an older transaction is corrected or removed.",
     featured: true,
     highlights: [
       "Atomic ledger replay keeps holdings and realised P/L consistent after transaction corrections.",
@@ -114,6 +116,8 @@ export const projects = [
       "Designed and implemented the MVC application, relational model, Identity roles, property and tenancy workflows, maintenance boundaries, and xUnit test coverage.",
     problem:
       "Property management joins public listings with sensitive tenancy and maintenance data. Each workflow must expose the right records and actions to administrators, property owners, and active tenants without leaking another user's data.",
+    outcome:
+      "The result is a working role-aware platform where administrators, landlords, and tenants see only the records and actions their relationship to a property permits.",
     featured: true,
     highlights: [
       "ASP.NET Core Identity separates Admin, Landlord, and Tenant capabilities.",

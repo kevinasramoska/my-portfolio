@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { ExternalLink, Github } from "lucide-react";
+import { ArrowLeft, CheckCircle2, ExternalLink, Github } from "lucide-react";
 import type { Project } from "@/types/content";
 import ProjectArchitecture from "@/components/projects/ProjectArchitecture";
+import ProjectPreview from "@/components/projects/ProjectPreview";
 
 type ProjectCaseStudyProps = {
   project: Project;
@@ -26,7 +27,8 @@ function BulletList({ items }: { items: readonly string[] }) {
 export default function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
   return (
     <>
-      <section className="border-b border-stone-800 bg-stone-950 px-6 pb-16 pt-28 sm:px-10 lg:px-16 lg:pb-20">
+      <section className="relative overflow-hidden border-b border-white/[0.08] px-6 pb-16 pt-32 sm:px-10 lg:px-16 lg:pb-20">
+        <div className="hero-grid absolute inset-0 -z-10 opacity-50" aria-hidden="true" />
         <div className="mx-auto max-w-6xl">
           <nav aria-label="Breadcrumb">
             <ol className="flex min-h-11 flex-wrap items-center gap-2 text-sm font-semibold text-stone-400">
@@ -48,61 +50,73 @@ export default function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
             </ol>
           </nav>
 
-          <p className="mt-8 text-sm font-semibold uppercase tracking-[0.2em] text-blue-400">
-            {project.eyebrow} case study
-          </p>
-          <h1 className="mt-3 max-w-5xl text-4xl font-bold leading-tight text-stone-100 sm:text-5xl lg:text-6xl">
-            {project.title}
-          </h1>
-          <p className="mt-6 max-w-4xl text-lg leading-8 text-stone-300 sm:text-xl">
-            {project.summary}
-          </p>
+          <div className="mt-8 grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-400">
+                {project.eyebrow} case study
+              </p>
+              <h1 className="mt-3 text-4xl font-bold leading-tight tracking-tight text-stone-100 sm:text-5xl lg:text-6xl">
+                {project.title}
+              </h1>
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-stone-300 sm:text-xl">
+                {project.summary}
+              </p>
 
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a
-              href={project.links.repository}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
-            >
-              <Github aria-hidden="true" size={17} />
-              View repository
-            </a>
-            {project.links.demo ? (
-              <a
-                href={project.links.demo}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-stone-700 px-5 py-3 text-sm font-semibold text-stone-200 transition hover:border-stone-500 hover:bg-stone-900"
-              >
-                <ExternalLink aria-hidden="true" size={17} />
-                Open live demo
-              </a>
-            ) : null}
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a
+                  href={project.links.repository}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-blue-500 px-5 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-blue-400"
+                >
+                  <Github aria-hidden="true" size={17} />
+                  View repository
+                </a>
+                {project.links.demo ? (
+                  <a
+                    href={project.links.demo}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-white/10 px-5 py-3 text-sm font-semibold text-stone-200 transition hover:border-white/20 hover:bg-white/[0.06]"
+                  >
+                    <ExternalLink aria-hidden="true" size={17} />
+                    Open live demo
+                  </a>
+                ) : null}
+              </div>
+            </div>
+
+            <ProjectPreview project={project} />
           </div>
         </div>
       </section>
 
       <div className="px-6 py-16 sm:px-10 lg:px-16 lg:py-20">
         <div className="mx-auto max-w-6xl space-y-20">
-          <section aria-labelledby="context-heading" className="grid gap-10 lg:grid-cols-2">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-stone-400">
-                Context
-              </p>
-              <h2 id="context-heading" className="mt-3 text-3xl font-bold text-stone-100">
-                Problem and scope
-              </h2>
-            </div>
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-lg font-semibold text-stone-100">The problem</h3>
-                <p className="mt-3 text-base leading-8 text-stone-300">{project.problem}</p>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-stone-100">My role</h3>
-                <p className="mt-3 text-base leading-8 text-stone-300">{project.role}</p>
-              </div>
+          <section aria-labelledby="context-heading">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-400">
+              At a glance
+            </p>
+            <h2 id="context-heading" className="mt-3 text-3xl font-bold text-stone-100">
+              Problem, contribution, outcome
+            </h2>
+            <div className="mt-8 grid gap-5 lg:grid-cols-3">
+              {[
+                { label: "The problem", text: project.problem },
+                { label: "My contribution", text: project.role },
+                { label: "The outcome", text: project.outcome },
+              ].map((item, index) => (
+                <article
+                  key={item.label}
+                  className="rounded-2xl border border-white/[0.08] bg-white/[0.025] p-6 sm:p-7"
+                >
+                  <div className="flex items-center justify-between gap-4">
+                    <h3 className="text-lg font-semibold text-stone-100">{item.label}</h3>
+                    <span className="text-sm font-bold text-blue-400">0{index + 1}</span>
+                  </div>
+                  <p className="mt-4 text-sm leading-7 text-stone-400">{item.text}</p>
+                </article>
+              ))}
             </div>
           </section>
 
@@ -111,7 +125,7 @@ export default function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
               System view
             </p>
             <h2 id="architecture-heading" className="mt-3 text-3xl font-bold text-stone-100">
-              Architecture
+              How the pieces work together
             </h2>
             <div className="mt-8">
               <ProjectArchitecture architecture={project.architecture} />
@@ -127,7 +141,14 @@ export default function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
                 Major capabilities
               </h2>
             </div>
-            <BulletList items={project.capabilities} />
+            <ul className="grid gap-3 sm:grid-cols-2">
+              {project.capabilities.map((capability) => (
+                <li key={capability} className="flex gap-3 rounded-xl border border-white/[0.08] bg-white/[0.02] p-4 text-sm leading-6 text-stone-300">
+                  <CheckCircle2 className="mt-0.5 shrink-0 text-emerald-400" aria-hidden="true" size={17} />
+                  <span>{capability}</span>
+                </li>
+              ))}
+            </ul>
           </section>
 
           <section aria-labelledby="decisions-heading">
@@ -187,6 +208,22 @@ export default function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
               <h2 className="mt-3 text-2xl font-bold text-stone-100">Lessons learned</h2>
               <BulletList items={project.lessons} />
             </div>
+          </section>
+
+          <section className="rounded-[2rem] border border-blue-400/20 bg-blue-400/[0.05] p-7 text-center sm:p-10">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-300">
+              Keep exploring
+            </p>
+            <h2 className="mt-3 text-2xl font-bold text-stone-100 sm:text-3xl">
+              See the other featured build
+            </h2>
+            <Link
+              href="/#projects"
+              className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-xl border border-white/10 bg-white/[0.05] px-5 py-3 text-sm font-semibold text-stone-100 transition hover:border-white/20 hover:bg-white/[0.09]"
+            >
+              <ArrowLeft aria-hidden="true" size={17} />
+              Back to selected projects
+            </Link>
           </section>
         </div>
       </div>

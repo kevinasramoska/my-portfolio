@@ -79,10 +79,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   }
 
   return (
-    <div>
+    <div className="portfolio-page">
       <JsonLd data={projectStructuredData(project)} />
       <Header />
-      <main id="main-content" tabIndex={-1}>
+      <main id="main-content" tabIndex={-1} className="relative z-10">
         <ProjectCaseStudy project={project} />
       </main>
       <Footer />

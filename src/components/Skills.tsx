@@ -1,18 +1,41 @@
+import {
+  Blocks,
+  Braces,
+  FlaskConical,
+  ServerCog,
+  type LucideIcon,
+} from "lucide-react";
+
+type SkillGroup = {
+  title: string;
+  description: string;
+  skills: readonly string[];
+  signal: string;
+  icon: LucideIcon;
+  className: string;
+  iconClassName: string;
+};
+
 const skillGroups = [
   {
     title: "Core Stack",
     description:
-      "The technologies I am most focused on for building backend-heavy and full-stack applications.",
+      "The technologies I use most across professional and personal full-stack work.",
     skills: [
-      "Java",
-      "Spring Boot",
-      "PostgreSQL",
       "C#",
       "ASP.NET Core",
+      "Razor",
+      "SQL Server",
       "React",
       "Next.js",
       "TypeScript",
+      "Java",
+      "Spring Boot",
     ],
+    signal: "Production focus",
+    icon: Braces,
+    className: "md:col-span-2 lg:col-span-2 bg-blue-400/[0.06] border-blue-400/20",
+    iconClassName: "bg-blue-400/10 text-blue-300",
   },
   {
     title: "Backend Development",
@@ -20,14 +43,18 @@ const skillGroups = [
       "Technologies and concepts I use for APIs, authentication, services, and data-driven systems.",
     skills: [
       "REST APIs",
-      "JWT Authentication",
+      "EF Core",
+      "JPA / Hibernate",
+      "PostgreSQL",
+      "Kafka",
       "Authorization",
-      "Database Design",
-      "Hibernate / JPA",
-      "Entity Framework Core",
-      "Service Architecture",
-      "Backend Feature Development",
+      "SSO",
+      "JWT Authentication",
     ],
+    signal: "Secure services",
+    icon: ServerCog,
+    className: "bg-violet-400/[0.05] border-violet-400/20",
+    iconClassName: "bg-violet-400/10 text-violet-300",
   },
   {
     title: "Frontend Development",
@@ -36,73 +63,95 @@ const skillGroups = [
     skills: [
       "React",
       "Next.js",
+      "Razor",
+      ".NET MAUI",
       "Tailwind CSS",
-      "Responsive UI Design",
-      "Component-Based Architecture",
-      "Frontend Integration",
+      "Responsive UI",
     ],
+    signal: "User-facing delivery",
+    icon: Blocks,
+    className: "bg-cyan-400/[0.05] border-cyan-400/20",
+    iconClassName: "bg-cyan-400/10 text-cyan-300",
   },
   {
-    title: "Tools & Platform",
+    title: "Testing & Delivery",
     description:
-      "The tools and platforms I use for development, deployment, collaboration, and workflow.",
+      "The tools I use to verify changes and deliver them safely.",
     skills: [
+      "Playwright",
+      "xUnit",
+      "JUnit",
+      "Mockito",
+      "Testcontainers",
+      "Azure DevOps",
+      "GitHub Actions",
+      "CI/CD",
       "Git",
-      "GitHub",
       "Docker",
-      "Azure",
-      "Linux",
-      "Vercel",
-      "Agile",
-      "VS Code",
     ],
+    signal: "Confidence to ship",
+    icon: FlaskConical,
+    className: "md:col-span-2 lg:col-span-2 bg-emerald-400/[0.05] border-emerald-400/20",
+    iconClassName: "bg-emerald-400/10 text-emerald-300",
   },
-];
+] as const satisfies readonly SkillGroup[];
 
 export default function Skills() {
   return (
-    <section id="skills" className="px-6 py-24 sm:px-10 lg:px-16">
-      <div className="mx-auto max-w-5xl rounded-3xl border border-stone-800 bg-stone-900/40 p-8 sm:p-10 lg:p-12">
-        <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-stone-400">
-          Skills
-        </p>
+    <section id="skills" className="reveal-section px-6 py-24 sm:px-10 lg:px-16">
+      <div className="mx-auto max-w-6xl">
+        <div className="max-w-3xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-400">
+            Technical toolkit
+          </p>
+          <h2 className="mt-4 text-3xl font-bold tracking-tight text-stone-100 sm:text-4xl lg:text-5xl">
+            Technologies I use to design, build, and ship software
+          </h2>
+          <p className="mt-6 text-lg leading-8 text-stone-300">
+            I work across .NET and Java ecosystems, from interfaces and APIs to
+            data, authentication, automated tests, and deployment pipelines.
+          </p>
+        </div>
 
-        <h2 className="text-3xl font-bold text-stone-100 sm:text-4xl">
-          Technologies I use to design, build, and ship software
-        </h2>
+        <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {skillGroups.map((group) => {
+            const Icon = group.icon;
 
-        <p className="mt-6 max-w-3xl text-lg leading-8 text-stone-300">
-          My strongest focus is backend and full-stack development using Java,
-          Spring Boot, .NET, PostgreSQL, React, and modern tooling for building
-          practical, production-ready applications.
-        </p>
-
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
-          {skillGroups.map((group) => (
-            <div
+            return (
+              <article
               key={group.title}
-              className="rounded-2xl border border-stone-800 bg-stone-950/60 p-6 sm:p-7"
+                className={`group rounded-[1.75rem] border p-6 transition duration-300 hover:-translate-y-1 sm:p-7 ${group.className}`}
             >
-              <h3 className="text-xl font-semibold text-stone-100">
-                {group.title}
-              </h3>
-
-              <p className="mt-3 text-sm leading-7 text-stone-400">
-                {group.description}
-              </p>
-
-              <div className="mt-6 flex flex-wrap gap-3">
-                {group.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="rounded-full border border-stone-700 bg-stone-900 px-4 py-2 text-sm text-stone-200"
-                  >
-                    {skill}
+                <div className="flex items-start justify-between gap-4">
+                  <div className={`grid h-11 w-11 place-items-center rounded-xl ${group.iconClassName}`}>
+                    <Icon aria-hidden="true" size={21} />
+                  </div>
+                  <span className="rounded-full border border-white/[0.08] bg-black/10 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-stone-400">
+                    {group.signal}
                   </span>
-                ))}
-              </div>
-            </div>
-          ))}
+                </div>
+
+                <h3 className="mt-6 text-xl font-semibold text-stone-100 sm:text-2xl">
+                  {group.title}
+                </h3>
+
+                <p className="mt-3 max-w-xl text-sm leading-7 text-stone-400">
+                  {group.description}
+                </p>
+
+                <div className="mt-6 flex flex-wrap gap-2.5">
+                  {group.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="rounded-full border border-white/[0.08] bg-zinc-950/50 px-3.5 py-2 text-sm text-stone-300 transition group-hover:border-white/[0.13]"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>

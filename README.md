@@ -159,7 +159,7 @@ Planned improvements include:
 # Author
 
 Kevinas Ramoska  
-Software Engineer
+Junior Full Stack Engineer at BWG Foods UC
 
 Portfolio  
 https://kevinasramoska-portfolio.vercel.app
@@ -168,7 +168,7 @@ GitHub
 https://github.com/kevinasramoska
 
 LinkedIn  
-https://linkedin.com/in/kevinasramoska
+https://linkedin.com/in/kramoska
 
 ---
 

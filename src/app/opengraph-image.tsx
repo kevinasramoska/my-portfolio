@@ -1,7 +1,7 @@
 import { profile } from "@/content/profile";
 import { createSocialImage, socialImageSize } from "@/lib/social-image";
 
-export const alt = `${profile.name}, backend-focused software engineer`;
+export const alt = `${profile.name}, full-stack software engineer`;
 export const size = socialImageSize;
 export const contentType = "image/png";
 

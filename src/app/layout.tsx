@@ -5,7 +5,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(profile.siteUrl),
   applicationName: `${profile.name} Portfolio`,
-  title: `${profile.name} | Backend-Focused Software Engineer`,
+  title: `${profile.name} | Full-Stack Software Engineer`,
   description: profile.metaDescription,
   authors: [{ name: profile.name, url: profile.siteUrl }],
   creator: profile.name,
@@ -18,27 +18,27 @@ export const metadata: Metadata = {
     type: "website",
     url: "/",
     siteName: `${profile.name} Portfolio`,
-    title: `${profile.name} | Backend-Focused Software Engineer`,
+    title: `${profile.name} | Full-Stack Software Engineer`,
     description: profile.metaDescription,
     images: [
       {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: `${profile.name}, backend-focused software engineer`,
+        alt: `${profile.name}, full-stack software engineer`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${profile.name} | Backend-Focused Software Engineer`,
+    title: `${profile.name} | Full-Stack Software Engineer`,
     description: profile.metaDescription,
     images: [
       {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: `${profile.name}, backend-focused software engineer`,
+        alt: `${profile.name}, full-stack software engineer`,
       },
     ],
   },

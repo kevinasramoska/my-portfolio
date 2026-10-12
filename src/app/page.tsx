@@ -11,10 +11,10 @@ import { homeStructuredData } from "@/lib/structured-data";
 
 export default function Home() {
   return (
-    <div>
+    <div className="portfolio-page">
       <JsonLd data={homeStructuredData} />
       <Header />
-      <main id="main-content" tabIndex={-1}>
+      <main id="main-content" tabIndex={-1} className="relative z-10">
         <Hero />
         <ExperienceTimeline />
         <Projects />

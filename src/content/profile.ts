@@ -1,27 +1,27 @@
 export const profile = {
   name: "Kevinas Ramoska",
-  role: "Software Engineer",
+  role: "Junior Full Stack Engineer at BWG Foods UC",
   headline:
-    "Backend-focused engineer building web applications with Java, Spring Boot, .NET, SQL, and React.",
+    "Full-stack engineer building reliable .NET business applications, automated tests, and secure user experiences.",
   summary:
-    "I build backend services, APIs, and full-stack applications with an emphasis on maintainable data models, authentication, testing, and reliable delivery. At General Motors, I worked on enterprise software in a professional engineering team.",
+    "At BWG Foods, I work across C#, ASP.NET Core, SQL Server, authentication, and delivery pipelines. I also bring Java Spring Boot, React, Kafka, and PostgreSQL experience from General Motors and my own full-stack projects.",
   availability:
-    "I am currently open to backend and full-stack software engineering opportunities.",
+    "I am always happy to connect with engineers, product teams, and people building useful software.",
   metaDescription:
-    "Backend-focused software engineer with General Motors experience, building Java, Spring Boot, .NET, SQL, React, and TypeScript applications.",
+    "Junior Full Stack Engineer at BWG Foods UC building C#/.NET business applications, with Java Spring Boot, React, SQL, Kafka, testing, and CI/CD experience.",
   siteUrl: "https://kevinasramoska-portfolio.vercel.app",
-  email: "kevinasramoska@gmail.com",
+  email: "kevinas530@gmail.com",
   links: {
     github: "https://github.com/kevinasramoska",
-    linkedin: "https://www.linkedin.com/in/kevinasramoska",
+    linkedin: "https://www.linkedin.com/in/kramoska/",
     resume: "/kevinas-ramoska-resume.pdf",
   },
   coreSkills: [
-    "Java",
-    "Spring Boot",
-    ".NET",
-    "SQL",
+    "C# / .NET",
+    "ASP.NET Core",
+    "SQL Server",
     "React",
-    "TypeScript",
+    "Java / Spring Boot",
+    "Playwright",
   ],
 } as const;

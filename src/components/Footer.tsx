@@ -2,18 +2,18 @@ import { profile } from "@/content/profile";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#121212] text-[#E0D7CF] py-6 border-t border-[#2A2A2A]">
-      <div className="container mx-auto px-4 text-center">
+    <footer className="border-t border-white/[0.07] px-6 py-8 text-stone-400 sm:px-10 lg:px-16">
+      <div className="mx-auto flex max-w-6xl flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p className="font-semibold text-stone-200">{profile.name}</p>
+          <p className="mt-1 text-sm">&copy; {new Date().getFullYear()} · Built with care in Ireland.</p>
+        </div>
 
-        <p className="text-sm mb-3">
-          &copy; {new Date().getFullYear()} {profile.name}. All rights reserved.
-        </p>
-
-        <div className="flex justify-center space-x-6 text-lg flex-wrap gap-y-2">
+        <nav aria-label="Footer navigation" className="flex flex-wrap gap-x-6 gap-y-1 text-sm font-semibold">
           <a
             href={profile.links.github}
             target="_blank"
-            className="inline-flex min-h-11 items-center transition hover:text-blue-400"
+            className="inline-flex min-h-11 items-center transition hover:text-blue-300"
             rel="noreferrer"
           >
             GitHub
@@ -22,7 +22,7 @@ export default function Footer() {
           <a
             href={profile.links.linkedin}
             target="_blank"
-            className="inline-flex min-h-11 items-center transition hover:text-blue-400"
+            className="inline-flex min-h-11 items-center transition hover:text-blue-300"
             rel="noreferrer"
           >
             LinkedIn
@@ -32,14 +32,11 @@ export default function Footer() {
             href={profile.links.resume}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex min-h-11 items-center transition hover:text-blue-400"
+            className="inline-flex min-h-11 items-center transition hover:text-blue-300"
           >
             View Resume
           </a>
-        </div>
-
-        {/* Accent bar */}
-        <div className="mx-auto mt-6 h-1 w-20 rounded-full bg-blue-500"></div>
+        </nav>
       </div>
     </footer>
   );
