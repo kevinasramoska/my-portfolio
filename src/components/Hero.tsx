@@ -4,7 +4,7 @@ import {
   CheckCircle2,
   FileText,
   FolderKanban,
-  Github,
+  CodeXml,
   Sparkles,
 } from "lucide-react";
 import { profile } from "@/content/profile";
@@ -60,7 +60,7 @@ export default function Hero() {
               rel="noreferrer"
               className="inline-flex min-h-12 items-center gap-2 rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-3 text-sm font-semibold text-zinc-200 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.08]"
             >
-              <Github aria-hidden="true" size={18} />
+              <CodeXml aria-hidden="true" size={18} />
               GitHub
             </a>
 

@@ -2,32 +2,36 @@
   "name": "my-portfolio",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
+    "audit": "npm audit --omit=dev --audit-level=high",
     "check": "npm run lint && npm run typecheck && npm run build",
     "test:e2e": "playwright test",
     "resume:build": "node scripts/build-resume.mjs"
   },
   "dependencies": {
-    "lucide-react": "^0.577.0",
-    "next": "^16.3.0",
-    "react": "^19.2.8",
-    "react-dom": "^19.2.8"
+    "lucide-react": "^1.57.0",
+    "next": "^16.4.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.13.0",
-    "@playwright/test": "^1.62.1",
+    "@playwright/test": "^1.64.1",
     "@tailwindcss/postcss": "^4.3.3",
-    "@types/node": "^20.19.43",
-    "@types/react": "^19.2.18",
-    "@types/react-dom": "^19.2.4",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
     "eslint": "^9.39.5",
-    "eslint-config-next": "^16.3.0",
+    "eslint-config-next": "^16.4.1",
     "tailwindcss": "^4.3.3",
-    "typescript": "^5"
+    "typescript": "~6.0.3"
   }
 }

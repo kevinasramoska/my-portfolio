@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, CheckCircle2, ExternalLink, Github } from "lucide-react";
+import { ArrowLeft, CheckCircle2, ExternalLink, CodeXml } from "lucide-react";
 import type { Project } from "@/types/content";
 import ProjectArchitecture from "@/components/projects/ProjectArchitecture";
 import ProjectGallery from "@/components/projects/ProjectGallery";
@@ -70,7 +70,7 @@ export default function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
                   rel="noreferrer"
                   className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-blue-500 px-5 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-blue-400"
                 >
-                  <Github aria-hidden="true" size={17} />
+                  <CodeXml aria-hidden="true" size={17} />
                   View repository
                 </a>
                 {project.links.demo ? (

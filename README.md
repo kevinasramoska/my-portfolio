@@ -93,6 +93,9 @@ cd my-portfolio
 
 Install dependencies and start the development server
 
+Use Node.js 24 LTS (`nvm use` reads `.nvmrc`). The same major version is
+configured for CI and Vercel through `package.json`.
+
 ```bash
 npm ci
 npm run dev
@@ -104,6 +107,7 @@ Quality checks:
 npm run lint
 npm run typecheck
 npm run build
+npm run audit
 ```
 
 Browser and automated accessibility tests:
@@ -115,6 +119,18 @@ npm run test:e2e
 
 The Playwright suite checks the homepage and project case studies in Chromium,
 including the responsive navigation and automated WCAG A/AA scans with axe.
+
+Dependency maintenance:
+
+- Dependabot checks npm packages and pinned GitHub Actions weekly.
+- CI blocks high/critical production dependency advisories.
+- TypeScript stays on 6.0 and ESLint on 9 while Next.js lint plugins require
+  those compatible versions. Node type definitions follow the Node 24 runtime.
+- The full `npm audit` currently reports the upstream `braces` advisory through
+  Next.js's development-only lint dependency chain. Do not use `npm audit fix
+  --force` to downgrade Next.js tooling; reassess when an upstream fix is available.
+- The CSP preserves static rendering and permits inline framework scripts/styles;
+  it restricts external resources but is not a strict nonce-based XSS policy.
 
 Production bundle measurements and methodology are recorded in
 [`docs/PERFORMANCE.md`](docs/PERFORMANCE.md).

@@ -45,6 +45,21 @@ async function expectNoAccessibilityViolations(
 }
 
 test.describe("portfolio routes", () => {
+  test("serves the production security header baseline", async ({ request }) => {
+    const response = await request.get("/");
+    const headers = response.headers();
+    const contentSecurityPolicy = headers["content-security-policy"];
+
+    expect(response.ok()).toBe(true);
+    expect(contentSecurityPolicy).toContain("default-src 'self'");
+    expect(contentSecurityPolicy).toContain("object-src 'none'");
+    expect(contentSecurityPolicy).toContain("frame-ancestors 'none'");
+    expect(headers["x-content-type-options"]).toBe("nosniff");
+    expect(headers["x-frame-options"]).toBe("DENY");
+    expect(headers["referrer-policy"]).toBe("strict-origin-when-cross-origin");
+    expect(headers["x-powered-by"]).toBeUndefined();
+  });
+
   for (const route of routes) {
     test(
       `${route.path} renders and passes automated accessibility checks`,

@@ -1,4 +1,4 @@
-import { ArrowUpRight, FileText, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowUpRight, FileText, CodeXml, ContactRound, Mail } from "lucide-react";
 import { profile } from "@/content/profile";
 
 const contactLinks = [
@@ -6,14 +6,14 @@ const contactLinks = [
     title: "GitHub",
     value: profile.links.github.replace("https://", ""),
     href: profile.links.github,
-    icon: Github,
+    icon: CodeXml,
     newTab: true,
   },
   {
     title: "LinkedIn",
     value: profile.links.linkedin.replace("https://www.", ""),
     href: profile.links.linkedin,
-    icon: Linkedin,
+    icon: ContactRound,
     newTab: true,
   },
   {

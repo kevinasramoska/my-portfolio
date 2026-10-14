@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, ExternalLink, Github } from "lucide-react";
+import { ArrowRight, CheckCircle2, ExternalLink, CodeXml } from "lucide-react";
 import type { Project } from "@/types/content";
 import ProjectPreview from "@/components/projects/ProjectPreview";
 
@@ -66,7 +66,7 @@ export default function ProjectCard({
               rel="noreferrer"
               className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-white/10 px-4 py-2 text-sm font-semibold text-stone-200 transition hover:border-white/20 hover:bg-white/[0.06]"
             >
-              <Github aria-hidden="true" size={16} />
+              <CodeXml aria-hidden="true" size={16} />
               Repository
             </a>
             {project.links.demo ? (
