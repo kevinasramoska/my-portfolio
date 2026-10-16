@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, BookOpen } from "lucide-react";
 import { articles } from "@/content/articles";
 
-export default function Writing() {
+export default function Writing({ showIndexLink = true }: { showIndexLink?: boolean }) {
   return (
     <section id="writing" className="reveal-section px-6 py-24 sm:px-10 lg:px-16">
       <div className="mx-auto max-w-6xl">
@@ -50,6 +50,11 @@ export default function Writing() {
           ))}
         </div>
       </div>
+      {showIndexLink && <div className="mx-auto mt-8 max-w-6xl">
+        <Link href="/writing" className="inline-flex min-h-11 items-center text-sm font-semibold text-violet-300 hover:text-violet-200">
+          Browse all technical writing
+        </Link>
+      </div>}
     </section>
   );
 }

@@ -9,7 +9,8 @@ export type Article = {
   title: string;
   summary: string;
   readTime: string;
-  published: string;
+  publishedAt: string;
+  updatedAt: string;
   relatedProject?: string;
   sections: readonly ArticleSection[];
 };
@@ -21,7 +22,8 @@ export const articles: readonly Article[] = [
     summary:
       "Why changing an old financial transaction is a ledger operation, not a simple database update.",
     readTime: "5 min read",
-    published: "12 October 2026",
+    publishedAt: "2026-10-12",
+    updatedAt: "2026-10-16",
     relatedProject: "crypto-portfolio-tracker",
     sections: [
       {
@@ -57,7 +59,8 @@ export const articles: readonly Article[] = [
     summary:
       "Roles describe the actor. Secure workflows must also verify the resource and relationship involved.",
     readTime: "5 min read",
-    published: "12 October 2026",
+    publishedAt: "2026-10-12",
+    updatedAt: "2026-10-16",
     relatedProject: "rentright",
     sections: [
       {
@@ -93,7 +96,8 @@ export const articles: readonly Article[] = [
     summary:
       "A practical browser-testing strategy for authentication, permissions, forms, and business workflows.",
     readTime: "6 min read",
-    published: "12 October 2026",
+    publishedAt: "2026-10-12",
+    updatedAt: "2026-10-16",
     sections: [
       {
         heading: "Use browser tests for browser-sized risk",
@@ -128,7 +132,8 @@ export const articles: readonly Article[] = [
     summary:
       "Four habits that make event-driven services easier to operate, test, and recover.",
     readTime: "5 min read",
-    published: "12 October 2026",
+    publishedAt: "2026-10-12",
+    updatedAt: "2026-10-16",
     sections: [
       {
         heading: "Design for delivery reality",
@@ -160,4 +165,10 @@ export const articles: readonly Article[] = [
 
 export function getArticle(slug: string) {
   return articles.find((article) => article.slug === slug);
+}
+
+export function articleDate(value: string) {
+  return new Intl.DateTimeFormat("en-IE", {
+    day: "numeric", month: "long", year: "numeric", timeZone: "UTC",
+  }).format(new Date(value));
 }

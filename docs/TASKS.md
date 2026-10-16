@@ -15,6 +15,7 @@ Updated 16 October 2026. Historical audits and planning live in `docs/archive/`.
 - [x] Node 24, compatible dependency updates, CSP, security headers, audit CI, and Dependabot.
 - [x] Configurable canonical origin and social-image hostname derived from shared configuration.
 - [x] RentRight MVC/API route collision fixed, with 241 passing tests and a patched transitive PKCS dependency.
+- [x] SEO index pages, article bylines/dates/share images, richer structured data, and crawler regression checks.
 
 ## Release dependencies
 
@@ -29,7 +30,8 @@ Updated 16 October 2026. Historical audits and planning live in `docs/archive/`.
 
 - [ ] Upgrade the upstream lint toolchain when it supports current ESLint and has a patched `braces` chain.
 - [ ] Refresh project metrics after future project changes; record commit/date alongside measurements.
-- [ ] Add remaining writing-route/metadata smoke coverage and a current performance baseline.
+- [ ] Verify Search Console ownership and submit the sitemap from the owner's Google account.
+- [ ] Record a current performance baseline.
 - [ ] Obtain permission for any recommendation quotes before publishing them.
 - [ ] Add privacy-conscious usage measurement if it will inform a specific design decision.
 

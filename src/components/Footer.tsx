@@ -1,4 +1,5 @@
 import { profile } from "@/content/profile";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -10,6 +11,8 @@ export default function Footer() {
         </div>
 
         <nav aria-label="Footer navigation" className="flex flex-wrap gap-x-6 gap-y-1 text-sm font-semibold">
+          <Link href="/projects" className="inline-flex min-h-11 items-center transition hover:text-blue-300">Projects</Link>
+          <Link href="/writing" className="inline-flex min-h-11 items-center transition hover:text-blue-300">Writing</Link>
           <a
             href={profile.links.github}
             target="_blank"

@@ -45,6 +45,10 @@ export async function generateMetadata({
       url: canonicalPath,
       title,
       description: project.metaDescription,
+      siteName: `${profile.name} Portfolio`,
+      locale: "en_IE",
+      modifiedTime: project.updatedAt,
+      authors: [profile.siteUrl],
       images: [
         {
           url: socialImagePath,

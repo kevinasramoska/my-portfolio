@@ -77,7 +77,14 @@ buttons render only after verified deployment URLs are set in each project's
 `links.demo`. Backend hosting and PostgreSQL/SQL Server accounts are still needed.
 See [the release guide](docs/DEPLOYMENT.md) for environment settings and smoke checks.
 
-## Maintenance
+## Search discovery
+
+The `/projects` and `/writing` indexes connect the case studies and articles.
+Pages have unique metadata, canonicals, structured data, and maintained sitemap
+dates; articles also have author bylines and their own sharing images.
+See [docs/SEO.md](docs/SEO.md) for Search Console verification and sitemap submission.
+
+## Dependency maintenance
 
 Dependabot checks npm dependencies and pinned GitHub Actions weekly. CI rejects
 high/critical production dependency advisories. TypeScript remains on 6.0 and

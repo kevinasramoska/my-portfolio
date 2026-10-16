@@ -40,7 +40,7 @@ export default function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
               </li>
               <li aria-hidden="true">/</li>
               <li>
-                <Link href="/#projects" className="transition hover:text-blue-400">
+                <Link href="/projects" className="transition hover:text-blue-400">
                   Featured projects
                 </Link>
               </li>
@@ -268,7 +268,7 @@ export default function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
               See the other featured build
             </h2>
             <Link
-              href="/#projects"
+              href="/projects"
               className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-xl border border-white/10 bg-white/[0.05] px-5 py-3 text-sm font-semibold text-stone-100 transition hover:border-white/20 hover:bg-white/[0.09]"
             >
               <ArrowLeft aria-hidden="true" size={17} />

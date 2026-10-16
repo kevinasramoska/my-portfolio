@@ -5,6 +5,7 @@ export const projects = [
     slug: "crypto-portfolio-tracker",
     status: "published",
     title: "Crypto Portfolio Tracker",
+    updatedAt: "2026-10-16",
     eyebrow: "Java + Spring Boot",
     summary:
       "A transaction-driven application for recording cryptocurrency trades, tracking stored holdings, and calculating realised and unrealised profit and loss.",
@@ -147,6 +148,7 @@ export const projects = [
     slug: "rentright",
     status: "published",
     title: "RentRight Property Management",
+    updatedAt: "2026-10-16",
     eyebrow: ".NET + ASP.NET Core MVC",
     summary:
       "An ASP.NET Core MVC property management application with role-specific workflows for administrators, landlords, and tenants.",

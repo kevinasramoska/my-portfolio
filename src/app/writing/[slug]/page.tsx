@@ -5,9 +5,10 @@ import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import JsonLd from "@/components/JsonLd";
-import { articles, getArticle } from "@/content/articles";
+import { articles, articleDate, getArticle } from "@/content/articles";
 import { profile } from "@/content/profile";
-import { absoluteUrl, writingPath } from "@/lib/metadata";
+import { writingPath, writingSocialImagePath } from "@/lib/metadata";
+import { articleStructuredData } from "@/lib/structured-data";
 
 type WritingPageProps = {
   params: Promise<{ slug: string }>;
@@ -29,6 +30,7 @@ export async function generateMetadata({
 
   const path = writingPath(article.slug);
   const title = `${article.title} | ${profile.name}`;
+  const image = { url: writingSocialImagePath(article.slug), width: 1200, height: 630, alt: article.title };
 
   return {
     title,
@@ -39,11 +41,18 @@ export async function generateMetadata({
       url: path,
       title,
       description: article.summary,
+      siteName: `${profile.name} Portfolio`,
+      locale: "en_IE",
+      publishedTime: article.publishedAt,
+      modifiedTime: article.updatedAt,
+      authors: [profile.siteUrl],
+      images: [image],
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title,
       description: article.summary,
+      images: [image],
     },
   };
 }
@@ -56,35 +65,30 @@ export default async function WritingPage({ params }: WritingPageProps) {
     notFound();
   }
 
-  const url = absoluteUrl(writingPath(article.slug));
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "TechArticle",
-    headline: article.title,
-    description: article.summary,
-    datePublished: "2026-10-12",
-    url,
-    author: {
-      "@type": "Person",
-      name: profile.name,
-      url: profile.siteUrl,
-    },
-  };
-
   return (
     <div className="portfolio-page">
-      <JsonLd data={structuredData} />
+      <JsonLd data={articleStructuredData(article)} />
       <Header />
       <main id="main-content" tabIndex={-1} className="relative z-10">
         <article className="px-6 pb-24 pt-32 sm:px-10 lg:px-16">
           <div className="mx-auto max-w-4xl">
             <Link
-              href="/#writing"
+              href="/writing"
               className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-stone-400 transition hover:text-violet-300"
             >
               <ArrowLeft aria-hidden="true" size={16} />
               Back to writing
             </Link>
+
+            <nav aria-label="Breadcrumb" className="mt-6 text-sm text-stone-400">
+              <ol className="flex flex-wrap items-center gap-2">
+                <li><Link href="/">Home</Link></li>
+                <li aria-hidden="true">/</li>
+                <li><Link href="/writing">Technical writing</Link></li>
+                <li aria-hidden="true">/</li>
+                <li aria-current="page">{article.title}</li>
+              </ol>
+            </nav>
 
             <header className="mt-8 border-b border-white/[0.08] pb-12">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-violet-300">
@@ -96,8 +100,13 @@ export default async function WritingPage({ params }: WritingPageProps) {
               <p className="mt-6 max-w-3xl text-lg leading-8 text-stone-300">
                 {article.summary}
               </p>
-              <p className="mt-6 text-sm font-medium text-stone-500">
-                {article.published} · {article.readTime}
+              <p className="mt-6 text-sm font-medium text-stone-400">
+                By <Link href="/#about" rel="author" className="text-violet-300">{profile.name}</Link>
+                {" · "}<time dateTime={article.publishedAt}>{articleDate(article.publishedAt)}</time>
+                {" · "}{article.readTime}
+              </p>
+              <p className="mt-2 text-xs text-stone-400">
+                Updated <time dateTime={article.updatedAt}>{articleDate(article.updatedAt)}</time>
               </p>
             </header>
 

@@ -34,6 +34,7 @@ export type Project = {
   eyebrow: string;
   summary: string;
   metaDescription: string;
+  updatedAt: string;
   role: string;
   problem: string;
   outcome: string;

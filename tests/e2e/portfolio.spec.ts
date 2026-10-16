@@ -23,6 +23,11 @@ const routes = [
     path: "/writing/designing-safe-transaction-correction",
     heading: "Designing safe transaction correction",
   },
+  { path: "/projects", heading: "Software engineering projects" },
+  { path: "/writing", heading: "Technical writing" },
+  { path: "/writing/role-based-authorization-beyond-roles", heading: "Role-based authorization beyond user roles" },
+  { path: "/writing/testing-aspnet-with-playwright", heading: "Testing ASP.NET applications with Playwright" },
+  { path: "/writing/kafka-lessons-from-production-style-workflows", heading: "Kafka lessons from production-style workflows" },
 ] as const;
 
 async function expectNoAccessibilityViolations(

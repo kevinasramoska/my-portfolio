@@ -5,12 +5,20 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(profile.siteUrl),
   applicationName: `${profile.name} Portfolio`,
-  title: `${profile.name} | Full-Stack Software Engineer`,
+  title: `${profile.name} | Full Stack Engineer in Ireland`,
   description: profile.metaDescription,
   authors: [{ name: profile.name, url: profile.siteUrl }],
   creator: profile.name,
   publisher: profile.name,
   category: "technology",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+  },
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION,
+  },
   alternates: {
     canonical: "/",
   },
@@ -18,7 +26,8 @@ export const metadata: Metadata = {
     type: "website",
     url: "/",
     siteName: `${profile.name} Portfolio`,
-    title: `${profile.name} | Full-Stack Software Engineer`,
+    locale: "en_IE",
+    title: `${profile.name} | Full Stack Engineer in Ireland`,
     description: profile.metaDescription,
     images: [
       {
@@ -31,7 +40,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${profile.name} | Full-Stack Software Engineer`,
+    title: `${profile.name} | Full Stack Engineer in Ireland`,
     description: profile.metaDescription,
     images: [
       {

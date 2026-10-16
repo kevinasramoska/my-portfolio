@@ -1,7 +1,8 @@
 import { featuredProjects } from "@/content/projects";
 import ProjectCard from "@/components/projects/ProjectCard";
+import Link from "next/link";
 
-export default function Projects() {
+export default function Projects({ showIndexLink = true }: { showIndexLink?: boolean }) {
   return (
     <section id="projects" className="px-6 py-24 sm:px-10 lg:px-16">
       <div className="mx-auto max-w-6xl">
@@ -31,6 +32,9 @@ export default function Projects() {
             />
           ))}
         </div>
+        {showIndexLink && <Link href="/projects" className="mt-8 inline-flex min-h-11 items-center text-sm font-semibold text-blue-300 hover:text-blue-200">
+          Browse all project case studies
+        </Link>}
       </div>
     </section>
   );

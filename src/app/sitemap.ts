@@ -7,18 +7,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: absoluteUrl(),
-      changeFrequency: "monthly",
-      priority: 1,
+      lastModified: "2026-10-16",
     },
+    { url: absoluteUrl("/projects"), lastModified: "2026-10-16" },
+    { url: absoluteUrl("/writing"), lastModified: "2026-10-16" },
     ...publishedProjects.map((project) => ({
       url: absoluteUrl(projectPath(project.slug)),
-      changeFrequency: "monthly" as const,
-      priority: project.featured ? 0.8 : 0.6,
+      lastModified: project.updatedAt,
+      images: project.screenshots.map((screenshot) => absoluteUrl(screenshot.src)),
     })),
     ...articles.map((article) => ({
       url: absoluteUrl(writingPath(article.slug)),
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
+      lastModified: article.updatedAt,
     })),
   ];
 }
