@@ -1,4 +1,6 @@
 import { ArrowDownRight, Award, Repeat2, Shield, Target } from "lucide-react";
+import { about } from "@/content/career.json";
+import { profile } from "@/content/profile";
 
 export default function About() {
   return (
@@ -14,21 +16,8 @@ export default function About() {
             </h2>
 
             <div className="mt-7 space-y-6 text-base leading-8 text-stone-300 sm:text-lg">
-              <p>
-                I am a Junior Full Stack Engineer at BWG Foods, where I develop
-                and maintain retailer and administration applications using C#,
-                ASP.NET Core, Razor, and SQL Server. My work spans product
-                features, authentication, automated testing, production fixes,
-                and CI/CD.
-              </p>
-
-              <p>
-                Before joining BWG full-time, I completed a full-stack
-                internship there and worked with Java Spring Boot, React,
-                PostgreSQL, and Kafka at General Motors. Those roles taught me
-                to move comfortably between interfaces, services, data,
-                testing, and delivery workflows.
-              </p>
+              <p>I am a {profile.role}. {about[0]}</p>
+              {about.slice(1).map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             </div>
 
           </div>

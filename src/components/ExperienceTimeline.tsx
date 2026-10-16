@@ -1,46 +1,6 @@
 import { ArrowUpRight, BriefcaseBusiness, CheckCircle2 } from "lucide-react";
 
-const experiences = [
-  {
-    period: "Sep 2026 – Present",
-    title: "Junior Full Stack Engineer",
-    company: "BWG Foods UC",
-    location: "Dublin · Hybrid",
-    current: true,
-    milestone: "Promoted from internship",
-    highlights: [
-      "Develop and maintain ShopLinkPOS retailer and administration applications with C#, ASP.NET Core MVC, Razor, and SQL Server.",
-      "Build Playwright for .NET end-to-end tests and xUnit unit tests, backed by Azure DevOps pull-request validation and CI pipelines.",
-      "Improve single sign-on, permission-aware navigation, authentication, and production workflows while partnering with QA to validate fixes.",
-    ],
-  },
-  {
-    period: "May 2026 – Sep 2026",
-    title: "Full Stack Developer Intern",
-    company: "BWG Foods UC",
-    location: "Dublin · Hybrid",
-    current: false,
-    milestone: "Joined BWG engineering",
-    highlights: [
-      "Delivered ShopLinkPOS features for event registration, document management, and retailer news and content publishing.",
-      "Upgraded a cross-platform .NET MAUI application from .NET 8 to .NET 10 for Android and iOS.",
-      "Contributed to Just Eat Q-commerce integration, consent-management migration, analytics changes, database updates, and UAT fixes.",
-    ],
-  },
-  {
-    period: "Jan 2023 – May 2024",
-    title: "Software Engineer Intern / Part-Time",
-    company: "General Motors",
-    location: "Dublin",
-    current: false,
-    milestone: "Enterprise foundation",
-    highlights: [
-      "Engineered Java Spring Boot REST and data-sync functionality using PostgreSQL, JPA/Hibernate, and external API integrations.",
-      "Implemented and debugged Kafka producer and consumer workflows, message handling, failure scenarios, and service tests.",
-      "Created React and JavaScript screens with Ant Design and Azure AD/MSAL authentication for an internal application.",
-    ],
-  },
-];
+import { experiences } from "@/content/career.json";
 
 export default function ExperienceTimeline() {
   return (

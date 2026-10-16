@@ -1,11 +1,28 @@
 import { spawnSync } from "node:child_process";
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join, resolve } from "node:path";
+import { html, hash, sourceHash } from "./resume-content.mjs";
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const inputPath = join(projectRoot, "resume", "kevinas-ramoska-resume.html");
 const outputPath = join(projectRoot, "public", "kevinas-ramoska-resume.pdf");
+const manifestPath = join(projectRoot, "resume", "manifest.json");
+
+if (process.argv.includes("--check")) {
+  const manifest = JSON.parse(readFileSync(manifestPath, "utf8"));
+  if (
+    readFileSync(inputPath, "utf8") !== html ||
+    manifest.sourceHash !== sourceHash ||
+    manifest.pdfHash !== hash(readFileSync(outputPath))
+  ) {
+    throw new Error("The served resume is stale. Run npm run resume:build and commit the generated HTML, PDF, and manifest.");
+  }
+  console.log("Resume HTML and PDF match the shared career and project content.");
+  process.exit(0);
+}
+
+writeFileSync(inputPath, html);
 
 const candidates = [
   process.env.CHROME_PATH,
@@ -47,5 +64,7 @@ const result = spawnSync(
 if (result.status !== 0 || !existsSync(outputPath)) {
   throw new Error("Resume PDF generation failed.");
 }
+
+writeFileSync(manifestPath, JSON.stringify({ sourceHash, pdfHash: hash(readFileSync(outputPath)) }, null, 2) + "\n");
 
 console.log(`Created ${outputPath}`);

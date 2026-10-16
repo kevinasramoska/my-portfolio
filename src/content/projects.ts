@@ -196,9 +196,9 @@ export const projects = [
     ],
     metrics: [
       {
-        value: "239",
+        value: "241",
         label: "passing tests",
-        detail: "xUnit service, controller, domain, API convention, and authorization checks verified locally.",
+        detail: "xUnit service, controller, domain, API, authorization, and Razor form-routing checks verified on 16 October 2026.",
       },
       {
         value: "3",
@@ -245,6 +245,7 @@ export const projects = [
       "Let landlords manage their own properties while administrators manage all properties and tenancies.",
       "Scope tenant maintenance requests to their own active tenancies.",
       "Give landlords a maintenance queue only for owned properties, with controlled status transitions.",
+      "Expose versioned property JSON endpoints with pagination, OpenAPI, antiforgery, and role/resource authorization.",
     ],
     decisions: [
       {
@@ -257,9 +258,9 @@ export const projects = [
       {
         title: "Server-rendered MVC first",
         decision:
-          "Deliver the current workflows with Razor Views and MVC rather than introducing a separate REST API and React client.",
+          "Deliver browser workflows with Razor Views and MVC alongside a versioned property JSON API, with shared application services.",
         tradeOff:
-          "This keeps the application and validation path compact, but an API/client split remains future work if multiple clients or richer interactions become necessary.",
+          "This keeps the browser workflow compact. A separate React client and tenancy/maintenance API endpoints remain future work; the property API already exists.",
       },
       {
         title: "Explicit workflow outcomes",
@@ -278,13 +279,13 @@ export const projects = [
       "The repository pins the .NET 10 SDK and provides repeatable restore, build, test, migration, and run commands.",
       "Local secrets provide database and optional development-admin configuration without checked-in credentials.",
       "Entity Framework migrations version the SQL Server schema.",
+      "A non-root .NET container definition and production runbook are prepared; backend hosting and SQL Server provisioning are still required.",
     ],
     limitations: [
-      "A REST API and React client have not been built; the current application is MVC with Razor Views.",
-      "The current Razor property-create form resolves to the JSON API route and returns 415; its MVC route needs to be disambiguated.",
+      "The property REST API exists, but a React client and tenancy/maintenance API endpoints are still planned.",
       "SQL Server-backed integration tests and broader authorisation coverage are still planned.",
       "Tenant invitation, immutable maintenance status history, optimistic concurrency, and pagination remain future work.",
-      "Application/service-layer extraction is still listed in the repository roadmap.",
+      "Public demo hosting, production Identity key storage, and initial demo-role provisioning are not configured yet.",
     ],
     lessons: [
       "Roles answer what kind of user is acting; secure workflows also need to verify which property, tenancy, or request that user is allowed to access.",

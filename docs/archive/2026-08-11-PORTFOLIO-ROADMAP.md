@@ -1,5 +1,7 @@
 # Portfolio Improvement Roadmap
 
+Archived planning document. Completed work and remaining release requirements are tracked in [the current backlog](../TASKS.md).
+
 This roadmap converts the audit into an implementation sequence. It deliberately prioritises truth, recruiter flow, and engineering evidence before visual polish.
 
 ## Product principles

@@ -127,11 +127,24 @@ test.describe("portfolio routes", () => {
     ).toBeVisible();
     await expect(page.getByRole("link", { name: "View credential" })).toHaveAttribute(
       "href",
-      "https://www.linkedin.com/in/kramoska/details/certifications/",
+      "https://learn.microsoft.com/en-us/users/kevinasramoska-0112/credentials/26a7611366eb82f2",
     );
 
     await page.goto("/#writing");
     await expect(page.getByRole("link", { name: "Read article" })).toHaveCount(4);
+  });
+
+  test("resume links serve the current PDF and BWG roles are visible", async ({ page, request }) => {
+    await page.goto("/#experience");
+    await expect(page.getByRole("heading", { name: "Junior Full Stack Engineer", exact: true })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Full Stack Developer Intern", exact: true })).toBeVisible();
+
+    const resumePath = await page.getByRole("link", { name: "View Resume", exact: true }).getAttribute("href");
+    expect(resumePath).toBeTruthy();
+    const response = await request.get(resumePath!);
+    expect(response.ok()).toBe(true);
+    expect(response.headers()["content-type"]).toContain("application/pdf");
+    expect((await response.body()).subarray(0, 5).toString()).toBe("%PDF-");
   });
 
   test("case studies use real product screenshots and verified metrics", async ({

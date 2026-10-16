@@ -30,6 +30,9 @@ jobs:
       - name: Audit production dependencies
         run: npm run audit
 
+      - name: Check resume content is synchronized
+        run: npm run resume:check
+
       - name: Install Playwright browser
         run: npx playwright install --with-deps chromium
 

@@ -1,0 +1,86 @@
+{
+  "profile": {
+    "name": "Kevinas Ramoska",
+    "headline": "Full-stack engineer building reliable .NET business applications, automated tests, and secure user experiences.",
+    "summary": "At BWG Foods, I work across C#, ASP.NET Core, SQL Server, authentication, and delivery pipelines. I also bring Java Spring Boot, React, Kafka, and PostgreSQL experience from General Motors and my own full-stack projects.",
+    "availability": "I am always happy to connect with engineers, product teams, and people building useful software.",
+    "metaDescription": "Junior Full Stack Engineer at BWG Foods UC building C#/.NET business applications, with Java Spring Boot, React, SQL, Kafka, testing, and CI/CD experience.",
+    "siteUrl": "https://kevinasramoska-portfolio.vercel.app",
+    "email": "kevinas530@gmail.com",
+    "phone": "+353 89 951 1136",
+    "location": "Ireland",
+    "links": {
+      "github": "https://github.com/kevinasramoska",
+      "linkedin": "https://www.linkedin.com/in/kramoska/",
+      "resume": "/kevinas-ramoska-resume.pdf",
+      "ijf": "https://www.ijf.org/judoka/45746",
+      "judoInside": "https://judoinside.com/judoka/118100/Kevinas_Ramoska/judo-career"
+    },
+    "coreSkills": ["C# / .NET", "ASP.NET Core", "SQL Server", "React", "Java / Spring Boot", "Playwright"]
+  },
+  "experiences": [
+    {
+      "period": "Sep 2026 - Present",
+      "title": "Junior Full Stack Engineer",
+      "company": "BWG Foods UC",
+      "location": "Dublin",
+      "current": true,
+      "milestone": "Promoted from internship",
+      "highlights": [
+        "Develop and maintain ShopLinkPOS retailer and administration applications with C#, ASP.NET Core MVC, Razor, and SQL Server.",
+        "Build Playwright for .NET end-to-end tests and xUnit unit tests, backed by Azure DevOps pull-request validation and CI pipelines.",
+        "Improve single sign-on, permission-aware navigation, authentication, and production workflows while partnering with QA to validate fixes."
+      ]
+    },
+    {
+      "period": "May 2026 - Sep 2026",
+      "title": "Full Stack Developer Intern",
+      "company": "BWG Foods UC",
+      "location": "Dublin",
+      "current": false,
+      "milestone": "Joined BWG engineering",
+      "highlights": [
+        "Delivered ShopLinkPOS features for event registration, document management, and retailer news and content publishing.",
+        "Upgraded a cross-platform .NET MAUI application from .NET 8 to .NET 10 for Android and iOS.",
+        "Contributed to Just Eat Q-commerce integration, consent-management migration, analytics changes, database updates, and UAT fixes."
+      ]
+    },
+    {
+      "period": "Jan 2023 - May 2024",
+      "title": "Software Engineer Intern / Part-Time",
+      "company": "General Motors",
+      "location": "Dublin",
+      "current": false,
+      "milestone": "Enterprise foundation",
+      "highlights": [
+        "Engineered Java Spring Boot REST and data-sync functionality using PostgreSQL, JPA/Hibernate, and external API integrations.",
+        "Implemented and debugged Kafka producer and consumer workflows, message handling, failure scenarios, and service tests.",
+        "Created React and JavaScript screens with Ant Design and Azure AD/MSAL authentication for an internal application."
+      ]
+    }
+  ],
+  "about": [
+    "I develop and maintain retailer and administration applications using C#, ASP.NET Core, Razor, and SQL Server. My work spans product features, authentication, automated testing, production fixes, and CI/CD.",
+    "Before joining BWG full-time, I completed a full-stack internship there and worked with Java Spring Boot, React, PostgreSQL, and Kafka at General Motors. Those roles taught me to move comfortably between interfaces, services, data, testing, and delivery workflows."
+  ],
+  "education": {
+    "degree": "BSc Computer Science & Software Engineering",
+    "institution": "Maynooth University",
+    "period": "2020 - 2024"
+  },
+  "certification": {
+    "title": "Azure Fundamentals (AZ-900)",
+    "issuer": "Microsoft",
+    "issued": "February 2023",
+    "credentialId": "26A7611366EB82F2",
+    "url": "https://learn.microsoft.com/en-us/users/kevinasramoska-0112/credentials/26a7611366eb82f2"
+  },
+  "resumeSkills": [
+    { "title": "Languages", "items": "C#, Java, TypeScript, JavaScript, SQL" },
+    { "title": "Frameworks", "items": "ASP.NET Core MVC, Razor, .NET MAUI, Spring Boot, React, Next.js" },
+    { "title": "Data", "items": "SQL Server, PostgreSQL, EF Core, JPA/Hibernate, Flyway" },
+    { "title": "Testing", "items": "Playwright, xUnit, JUnit, Mockito, MockMvc, Testcontainers" },
+    { "title": "Delivery", "items": "Azure DevOps, GitHub Actions, Docker, CI/CD" },
+    { "title": "Integration", "items": "REST APIs, Kafka, authentication, authorization, SSO" }
+  ]
+}

@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { profile } from "@/content/profile";
 
 export const socialImageSize = {
   width: 1200,
@@ -73,7 +74,7 @@ export function createSocialImage({
               whiteSpace: "nowrap",
             }}
           >
-            kevinasramoska-portfolio.vercel.app
+            {new URL(profile.siteUrl).hostname}
           </div>
         </div>
 

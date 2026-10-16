@@ -1,193 +1,106 @@
-# Kevinas Ramoska – Software Engineering Portfolio
+# Kevinas Ramoska - Software Engineering Portfolio
 
-This repository contains the source code for my personal software engineering portfolio website.
+Next.js portfolio for a Junior Full Stack Engineer at BWG Foods UC, with previous
+General Motors experience, engineering case studies, technical writing, and an
+international judo career.
 
-The portfolio showcases my projects, technical experience, and engineering focus areas. It is designed to present my work clearly to recruiters and hiring managers while demonstrating my frontend and full-stack development capabilities.
+[Live portfolio](https://kevinasramoska-portfolio.vercel.app)
 
-Live site  
-https://kevinasramoska-portfolio.vercel.app
+## Stack and quality
 
----
+Next.js 16 App Router, React 19, TypeScript, Tailwind CSS 4, and Vercel. Most
+content renders as static server components; the responsive header is interactive.
+Playwright and axe verify browser journeys and automated accessibility. CI checks
+the resume, dependencies, lint, types, production build, and browser tests.
 
-# Overview
-
-This portfolio was built to provide a clean, modern interface highlighting:
-
-• Full-stack engineering projects  
-• Technical skills and technologies  
-• Professional experience  
-• Contact information for collaboration or opportunities  
-
-The goal of the project is to demonstrate both software engineering ability and an understanding of building performant modern web applications.
-
----
-
-# Tech Stack
-
-Frontend  
-React  
-TypeScript  
-Tailwind CSS  
-
-Framework / Tooling  
-Next.js App Router
-
-Deployment  
-Vercel  
-
-Version Control  
-Git + GitHub
-
----
-
-# Key Features
-
-• Responsive modern UI  
-• Project showcase section  
-• Professional experience timeline  
-• Technical skills overview  
-• Downloadable résumé  
-• Contact links to GitHub and LinkedIn  
-
----
-
-# Project Structure
-
-```text
-src
-├── app — routing, metadata, and global styles
-├── components — reusable portfolio sections
-└── content — canonical profile and project data
-
-public — résumé and social assets
-docs — audit, roadmap, and implementation backlog
-```
-
-The application is organized into reusable React components for maintainability and scalability.
-
----
-
-# Architecture
-
-The portfolio follows a component-based architecture typical of modern React applications.
-
-Each section of the site is implemented as an isolated component which improves:
-
-• readability  
-• reusability  
-• scalability  
-
-Styling is handled through Tailwind CSS utility classes.
-
----
-
-# Local Development
-
-Clone the repository
-
-Navigate to the project directory
+Use Node.js 24 LTS:
 
 ```bash
-cd my-portfolio
-```
-
-Install dependencies and start the development server
-
-Use Node.js 24 LTS (`nvm use` reads `.nvmrc`). The same major version is
-configured for CI and Vercel through `package.json`.
-
-```bash
+nvm use
 npm ci
 npm run dev
 ```
 
-Quality checks:
-
 ```bash
-npm run lint
-npm run typecheck
-npm run build
+npm run check
 npm run audit
-```
-
-Browser and automated accessibility tests:
-
-```bash
 npx playwright install chromium
-npm run test:e2e
+CI=1 npm run test:e2e
 ```
 
-The Playwright suite checks the homepage and project case studies in Chromium,
-including the responsive navigation and automated WCAG A/AA scans with axe.
+The CI browser suite tests the production build. Local tests use the development
+server unless `CI=1` is set.
 
-Dependency maintenance:
+## Content ownership
 
-- Dependabot checks npm packages and pinned GitHub Actions weekly.
-- CI blocks high/critical production dependency advisories.
-- TypeScript stays on 6.0 and ESLint on 9 while Next.js lint plugins require
-  those compatible versions. Node type definitions follow the Node 24 runtime.
-- The full `npm audit` currently reports the upstream `braces` advisory through
-  Next.js's development-only lint dependency chain. Do not use `npm audit fix
-  --force` to downgrade Next.js tooling; reassess when an upstream fix is available.
-- The CSP preserves static rendering and permits inline framework scripts/styles;
-  it restricts external resources but is not a strict nonce-based XSS policy.
+| Source | Controls |
+| --- | --- |
+| `src/content/career.json` | Identity, contact links, roles/dates/bullets, About, degree, credential, resume skills |
+| `src/content/profile.ts` | Derived current role, canonical origin, public profile adapter |
+| `src/content/projects.ts` | Project cards, case studies, screenshots, metrics, resume project bullets |
+| `src/content/articles.ts` | Four technical articles |
+| `src/content/current.ts` | Current working/learning interests |
+| `src/content/judo.ts` | Judo career and profile links |
+| `resume/template.html` | Print layout only |
 
-Production bundle measurements and methodology are recorded in
-[`docs/PERFORMANCE.md`](docs/PERFORMANCE.md).
+Career details are shared by the website and resume generator. Update the canonical
+content, not a second work-history list inside a React component or generated HTML.
+The Microsoft credential link comes from the supplied resume JSON.
 
-## Updating the Resume
+## Regenerating the resume
 
-Edit `resume/kevinas-ramoska-resume.html`, then generate the tagged PDF served by the portfolio:
+After editing career/project content or the print template:
 
 ```bash
 npm run resume:build
+npm run resume:check
 ```
 
-The script uses Google Chrome or Chromium. Set `CHROME_PATH` if the executable is not installed in a standard location.
+The generator uses Chrome/Chromium; set `CHROME_PATH` if it is outside the standard
+locations. It writes the HTML preview, tagged A4 PDF, and a content/PDF hash manifest.
+Review the rendered PDF and commit all three generated artifacts.
+CI fails when the HTML, PDF hash, or source content no longer matches the manifest.
+It does not require Chrome merely to check an existing PDF.
 
+The served asset is `public/kevinas-ramoska-resume.pdf`; links keep that stable URL.
 
----
+## Domain and demos
 
-# Deployment
+The intended custom domain is `kevinasramoska.dev`; registration and DNS setup are
+still required. The current Vercel origin remains canonical until the domain works
+over HTTPS. Set `NEXT_PUBLIC_SITE_URL` when changing the production origin and use
+the same value when rebuilding the resume. Metadata, structured data, sitemap,
+robots, and social-image hostname derive from that origin.
 
-The site is deployed using **Vercel**.
+Crypto and RentRight currently link to repositories and case studies. Live demo
+buttons render only after verified deployment URLs are set in each project's
+`links.demo`. Backend hosting and PostgreSQL/SQL Server accounts are still needed.
+See [the release guide](docs/DEPLOYMENT.md) for environment settings and smoke checks.
 
-Deployment workflow:
+## Maintenance
 
-1. Push changes to GitHub
-2. Vercel automatically builds the project
-3. The new version is deployed to the live domain
+Dependabot checks npm dependencies and pinned GitHub Actions weekly. CI rejects
+high/critical production dependency advisories. TypeScript remains on 6.0 and
+ESLint on 9 while Next.js's lint plugins require these versions; Node types match
+the Node 24 runtime. The full audit still reports the upstream development-only
+`braces` chain. Do not force a downgrade of Next tooling to silence it.
 
----
+The CSP preserves static generation and permits inline framework scripts/styles.
+It restricts external resources but is not a strict nonce-based XSS policy.
 
-# Future Improvements
+[Current backlog](docs/TASKS.md) records delivered work and remaining dependencies.
+The original August audit, roadmap, and task list are preserved under
+[docs/archive](docs/archive/). [Performance measurements](docs/PERFORMANCE.md)
+are historical baselines.
 
-Planned improvements include:
+## Release flow
 
-• additional engineering project case studies  
-• architecture diagrams for major projects  
-• improved project filtering and navigation  
-• blog posts or technical write-ups  
-• performance optimization and accessibility improvements  
+Push reviewed changes to `main`; GitHub runs CI and Vercel creates a production
+deployment. Verify the deployed commit, resume, primary links, metadata, headers,
+and one complete browser journey. Keep the previous deployment available for
+rollback; database migrations need a separate compatibility and recovery plan.
 
----
+## Author
 
-# Author
-
-Kevinas Ramoska  
-Junior Full Stack Engineer at BWG Foods UC
-
-Portfolio  
-https://kevinasramoska-portfolio.vercel.app
-
-GitHub  
-https://github.com/kevinasramoska
-
-LinkedIn  
-https://linkedin.com/in/kramoska
-
----
-
-# License
-
-This project is open source and available under the MIT License.
+[Kevinas Ramoska on GitHub](https://github.com/kevinasramoska) ·
+[LinkedIn](https://www.linkedin.com/in/kramoska/)

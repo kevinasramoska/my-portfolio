@@ -1,5 +1,7 @@
 # Software Engineering Portfolio Audit
 
+Archived historical audit. Its findings describe August 2026, not the current site. See [the current backlog](../TASKS.md).
+
 Audit date: 11 August 2026  
 Audience: recruiters, hiring managers, and software engineers  
 Primary goal: earn interviews by making credible engineering evidence easy to find and act on

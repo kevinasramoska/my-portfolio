@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import { currentFocus } from "@/content/current";
 import { profile } from "@/content/profile";
+import { certification, education } from "@/content/career.json";
 
 const focusGroups = [
   {
@@ -77,10 +78,10 @@ export default function CurrentFocus() {
                 Microsoft certification
               </p>
               <h3 className="mt-2 text-xl font-bold text-stone-100">
-                Azure Fundamentals (AZ-900)
+                {certification.title}
               </h3>
               <p className="mt-3 text-sm leading-6 text-stone-400">
-                Issued February 2023 · Credential ID 26A7611366EB82F2
+                Issued {certification.issued} · Credential ID {certification.credentialId}
               </p>
               <a
                 href={profile.links.certification}
@@ -99,10 +100,10 @@ export default function CurrentFocus() {
                 Education
               </p>
               <h3 className="mt-2 text-lg font-bold text-stone-100">
-                BSc Computer Science &amp; Software Engineering
+                {education.degree}
               </h3>
               <p className="mt-2 text-sm text-stone-400">
-                Maynooth University · 2020–2024
+                {education.institution} · {education.period}
               </p>
             </div>
           </aside>
