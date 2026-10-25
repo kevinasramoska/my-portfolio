@@ -32,10 +32,10 @@ export default function ProjectGallery({ screenshots }: ProjectGalleryProps) {
                   ? "(max-width: 1024px) 100vw, 72rem"
                   : "(max-width: 768px) 100vw, 36rem"
               }
-              className={`w-full object-cover object-top transition duration-500 group-hover:scale-[1.01] ${
+              className={`h-auto max-h-[60rem] w-full object-contain object-top transition duration-500 group-hover:scale-[1.01] ${
                 screenshot.height / screenshot.width < 0.3
                   ? "min-h-52 bg-zinc-950 object-contain"
-                  : "aspect-[16/10]"
+                  : ""
               }`}
             />
           </a>

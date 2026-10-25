@@ -1,11 +1,17 @@
+import { experiences } from "@/content/career.json";
+
+export const fullTimeJudoExperience = experiences.find(
+  (experience) => experience.title === "Full-time Judo Athlete",
+)!;
+
 export const judoProfile = {
   startedAge: 6,
-  status: "Active international competitor",
+  status: "Irish international judoka",
   nation: "Ireland",
   squad: "Irish national squad",
   weightClass: "+100 kg",
   summary:
-    "I started judo at six and continue to compete internationally as a member of the Irish national squad, representing Ireland in the senior +100 kg category.",
+    "I started judo at six and represent Ireland in the senior +100 kg category. After graduating in 2024, I focused on full-time judo before returning to software engineering in 2026.",
   links: {
     ijf: "https://www.ijf.org/judoka/45746",
     judoInside:
@@ -48,10 +54,16 @@ export const judoProfile = {
       accent: "blue",
     },
     {
-      period: "Today",
-      title: "Still competing for Ireland",
+      period: "2025",
+      title: "European senior circuit",
       description:
-        "Continuing to train and compete on the international senior circuit as part of the Irish squad.",
+        "Competed for Ireland at the Dubrovnik Senior European Cup in Croatia in the +100 kg category.",
+      accent: "blue",
+    },
+    {
+      period: fullTimeJudoExperience.period,
+      title: "Full-time athlete after graduation",
+      description: fullTimeJudoExperience.highlights[0],
       accent: "green",
     },
   ],

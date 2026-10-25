@@ -1,6 +1,7 @@
 import { ArrowDownRight, Award, Repeat2, Shield, Target } from "lucide-react";
 import { about } from "@/content/career.json";
 import { profile } from "@/content/profile";
+import { fullTimeJudoExperience } from "@/content/judo";
 
 export default function About() {
   return (
@@ -38,6 +39,9 @@ export default function About() {
               Represented Ireland
             </p>
             <p className="mt-5 leading-7 text-stone-400">
+              {fullTimeJudoExperience.highlights[0]}
+            </p>
+            <p className="mt-4 leading-7 text-stone-400">
               Competitive judo shaped how I approach engineering: stay composed,
               learn from every round, and improve through consistent practice.
             </p>

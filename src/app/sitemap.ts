@@ -7,9 +7,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: absoluteUrl(),
-      lastModified: "2026-10-16",
+      lastModified: "2026-10-24",
     },
-    { url: absoluteUrl("/projects"), lastModified: "2026-10-16" },
+    { url: absoluteUrl("/projects"), lastModified: "2026-10-24" },
     { url: absoluteUrl("/writing"), lastModified: "2026-10-16" },
     ...publishedProjects.map((project) => ({
       url: absoluteUrl(projectPath(project.slug)),

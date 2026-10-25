@@ -122,6 +122,13 @@ export default function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
                 </article>
               ))}
             </div>
+            {project.evidence ? (
+              <p className="mt-5 text-sm leading-6 text-stone-400">
+                <a href={project.evidence.url} target="_blank" rel="noreferrer" className="text-blue-300 underline underline-offset-4 hover:text-blue-200">
+                  {project.evidence.label}
+                </a>
+              </p>
+            ) : null}
           </section>
 
           <section aria-labelledby="context-heading">
@@ -162,7 +169,7 @@ export default function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
               The running application
             </h2>
             <p className="mt-4 max-w-3xl text-base leading-7 text-stone-400">
-              Captured from the real application with local development data.
+              {project.screenshotContext ?? "Captured from the real application with local development data."}{" "}
               Open any image to inspect it at full size.
             </p>
             <div className="mt-8">

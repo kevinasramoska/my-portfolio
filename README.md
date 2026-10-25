@@ -1,10 +1,14 @@
 # Kevinas Ramoska - Software Engineering Portfolio
 
-Next.js portfolio for a Junior Full Stack Engineer at BWG Foods UC, with previous
-General Motors experience, engineering case studies, technical writing, and an
-international judo career.
-
 [Live portfolio](https://kevinasramoska-portfolio.vercel.app)
+
+![Portfolio homepage with engineering experience and a concrete role snapshot](docs/images/home.png)
+
+Next.js 16 · React 19 · TypeScript · Tailwind CSS 4 · Playwright + axe · Vercel
+
+Portfolio for a Junior Full Stack Engineer at BWG Foods UC, with General Motors
+experience, full-time international judo from 2024 to 2026, engineering case
+studies, and technical writing.
 
 ## Stack and quality
 
@@ -64,18 +68,20 @@ It does not require Chrome merely to check an existing PDF.
 
 The served asset is `public/kevinas-ramoska-resume.pdf`; links keep that stable URL.
 
-## Domain and demos
+Domain registration and public demos are deferred; see [the backlog](docs/TASKS.md)
+and [release guide](docs/DEPLOYMENT.md) for prerequisites and canonical-origin setup.
 
-The intended custom domain is `kevinasramoska.dev`; registration and DNS setup are
-still required. The current Vercel origin remains canonical until the domain works
-over HTTPS. Set `NEXT_PUBLIC_SITE_URL` when changing the production origin and use
-the same value when rebuilding the resume. Metadata, structured data, sitemap,
-robots, and social-image hostname derive from that origin.
+## Project evidence
 
-Crypto and RentRight currently link to repositories and case studies. Live demo
-buttons render only after verified deployment URLs are set in each project's
-`links.demo`. Backend hosting and PostgreSQL/SQL Server accounts are still needed.
-See [the release guide](docs/DEPLOYMENT.md) for environment settings and smoke checks.
+The RentRight case study reflects the React/.NET application at commit `d8216bb`.
+Its [24 October CI run](https://github.com/kevinasramoska/RentRight/actions/runs/40082766420)
+passed 596 fast .NET tests, 248 SQL integration tests (one additional test skipped),
+and 91 frontend tests. These are separate test layers, not one end-to-end total.
+The resident screenshots show the real React presentation with synthetic,
+in-memory data; they do not prove a live backend operation.
+
+Career and project updates made on 24 October are explained file by file in
+[the implementation notes](docs/CHANGES-2026-10-24.md).
 
 ## Search discovery
 

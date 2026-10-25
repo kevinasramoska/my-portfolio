@@ -16,7 +16,15 @@
       "ijf": "https://www.ijf.org/judoka/45746",
       "judoInside": "https://judoinside.com/judoka/118100/Kevinas_Ramoska/judo-career"
     },
-    "coreSkills": ["C# / .NET", "ASP.NET Core", "SQL Server", "React", "Java / Spring Boot", "Playwright"]
+    "coreSkills": ["C# / .NET", "ASP.NET Core", "SQL Server", "React", "Java / Spring Boot", "Playwright"],
+    "engineeringSnapshot": {
+      "building": "ShopLinkPOS retailer and admin apps",
+      "testing": "Playwright for .NET + xUnit",
+      "proofPoints": [
+        { "title": "Secure workflows", "detail": "SSO and permission-aware navigation" },
+        { "title": "Enterprise background", "detail": "Java, Kafka and React at General Motors" }
+      ]
+    }
   },
   "experiences": [
     {
@@ -27,9 +35,9 @@
       "current": true,
       "milestone": "Promoted from internship",
       "highlights": [
-        "Develop and maintain ShopLinkPOS retailer and administration applications with C#, ASP.NET Core MVC, Razor, and SQL Server.",
-        "Build Playwright for .NET end-to-end tests and xUnit unit tests, backed by Azure DevOps pull-request validation and CI pipelines.",
-        "Improve single sign-on, permission-aware navigation, authentication, and production workflows while partnering with QA to validate fixes."
+        "Develop ShopLinkPOS retailer and administration workflows with C#, ASP.NET Core MVC, Razor, and SQL Server.",
+        "Build Playwright for .NET and xUnit coverage with Azure DevOps pull-request validation and CI pipelines.",
+        "Improve SSO, permission-aware navigation, and production workflows; partner with QA to validate fixes."
       ]
     },
     {
@@ -40,9 +48,20 @@
       "current": false,
       "milestone": "Joined BWG engineering",
       "highlights": [
-        "Delivered ShopLinkPOS features for event registration, document management, and retailer news and content publishing.",
-        "Upgraded a cross-platform .NET MAUI application from .NET 8 to .NET 10 for Android and iOS.",
-        "Contributed to Just Eat Q-commerce integration, consent-management migration, analytics changes, database updates, and UAT fixes."
+        "Delivered ShopLinkPOS event registration, document management, and retailer content-publishing features.",
+        "Upgraded a .NET MAUI application from .NET 8 to .NET 10 for Android and iOS.",
+        "Contributed to Just Eat Q-commerce integration, consent-management migration, analytics, database updates, and UAT fixes."
+      ]
+    },
+    {
+      "period": "2024 - 2026",
+      "title": "Full-time Judo Athlete",
+      "company": "Irish national squad",
+      "location": "International",
+      "current": false,
+      "milestone": "Full-time sport after graduation",
+      "highlights": [
+        "Represented Ireland as a full-time athlete after graduation, travelling for training and competition across Europe, Japan, and Canada."
       ]
     },
     {
@@ -53,9 +72,9 @@
       "current": false,
       "milestone": "Enterprise foundation",
       "highlights": [
-        "Engineered Java Spring Boot REST and data-sync functionality using PostgreSQL, JPA/Hibernate, and external API integrations.",
-        "Implemented and debugged Kafka producer and consumer workflows, message handling, failure scenarios, and service tests.",
-        "Created React and JavaScript screens with Ant Design and Azure AD/MSAL authentication for an internal application."
+        "Built Java Spring Boot REST and data-sync workflows using PostgreSQL, JPA/Hibernate, and external APIs.",
+        "Implemented and debugged Kafka producers, consumers, failure scenarios, and service tests.",
+        "Created React screens with Ant Design and Azure AD/MSAL authentication for an internal application."
       ]
     }
   ],

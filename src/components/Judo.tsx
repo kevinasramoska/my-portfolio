@@ -25,7 +25,7 @@ export default function Judo() {
               Judo career
             </p>
             <h2 className="mt-4 max-w-xl text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              On the mat since six. Competing for Ireland.
+              On the mat since six. Representing Ireland.
             </h2>
             <p className="mt-6 max-w-xl text-lg leading-8 text-stone-300">
               {judoProfile.summary}
