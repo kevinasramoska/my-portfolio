@@ -41,7 +41,9 @@ export type Project = {
   featured: boolean;
   highlights: readonly string[];
   screenshots: readonly ProjectScreenshot[];
+  screenshotContext?: string;
   metrics: readonly ProjectMetric[];
+  evidence?: { url: ExternalUrl; label: string };
   technologies: readonly string[];
   programmingLanguages: readonly string[];
   architecture: {

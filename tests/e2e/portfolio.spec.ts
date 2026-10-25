@@ -106,7 +106,7 @@ test.describe("portfolio routes", () => {
     await expect(
       page.getByRole("heading", {
         level: 2,
-        name: "On the mat since six. Competing for Ireland.",
+        name: "On the mat since six. Representing Ireland.",
       }),
     ).toBeVisible();
     await expect(
@@ -151,6 +151,56 @@ test.describe("portfolio routes", () => {
     expect(response.headers()["content-type"]).toContain("application/pdf");
     expect((await response.body()).subarray(0, 5).toString()).toBe("%PDF-");
   });
+
+  test("career history explains the full-time judo period between engineering roles", async ({ page }) => {
+    await page.goto("/#experience");
+    const entries = page.locator("#experience article");
+    await expect(entries).toHaveCount(4);
+    await expect(entries.nth(0)).toContainText("Junior Full Stack Engineer");
+    await expect(entries.nth(1)).toContainText("Full Stack Developer Intern");
+    await expect(entries.nth(2)).toContainText("Full-time Judo Athlete");
+    await expect(entries.nth(2)).toContainText("2024 - 2026");
+    await expect(entries.nth(2)).toContainText("Europe, Japan, and Canada");
+    await expect(entries.nth(2).getByText("Current", { exact: true })).toHaveCount(0);
+    await expect(entries.nth(3)).toContainText("General Motors");
+    await expect(page.locator("#about")).toContainText("Europe, Japan, and Canada");
+    await expect(page.locator("#judo")).toContainText("Dubrovnik Senior European Cup");
+    await expect(page.locator("#judo")).toContainText("2024 - 2026");
+  });
+
+  test("RentRight case study discloses screenshot scope and links to dated CI evidence", async ({ page, request }) => {
+    await page.goto("/projects/rentright");
+    for (const count of ["596", "248", "91"]) {
+      await expect(page.getByText(count, { exact: true })).toBeVisible();
+    }
+    await expect(page.getByText(/248 passed, one skipped, zero failed/)).toBeVisible();
+    await expect(page.getByRole("link", { name: /Inspect verified CI results/ })).toHaveAttribute(
+      "href", "https://github.com/kevinasramoska/RentRight/actions/runs/40082766420",
+    );
+    await expect(page.getByText(/These browser captures show the tenant UI simulation/)).toBeVisible();
+    await expect(page.getByRole("link", { name: "Open live demo" })).toHaveCount(0);
+    await expect(page.getByText(/a React client and tenancy\/maintenance API endpoints are still planned/)).toHaveCount(0);
+    for (const name of ["resident-overview", "repair-timeline", "resident-mobile"]) {
+      const image = await request.get(`/projects/rentright/${name}.png`);
+      expect(image.ok()).toBe(true);
+      expect(image.headers()["content-type"]).toContain("image/png");
+    }
+  });
+
+  for (const width of [375, 1280]) {
+    test(`hero presents a readable engineering snapshot at ${width}px without overflow`, async ({ page }) => {
+      await page.setViewportSize({ width, height: 900 });
+      await page.goto("/");
+      const snapshot = page.locator('dl[aria-label="Engineering snapshot"]');
+      await expect(snapshot).toBeVisible();
+      await expect(snapshot.locator("dt")).toHaveCount(4);
+      await expect(snapshot).toContainText("Junior Full Stack Engineer at BWG Foods UC");
+      await expect(snapshot).toContainText("ShopLinkPOS retailer and admin apps");
+      await expect(snapshot).toContainText("Playwright for .NET + xUnit");
+      await expect(page.locator("#home")).not.toContainText("buildSomethingGreat");
+      expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBe(0);
+    });
+  }
 
   test("case studies use real product screenshots and verified metrics", async ({
     page,

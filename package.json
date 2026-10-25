@@ -14,6 +14,7 @@
     "audit": "npm audit --omit=dev --audit-level=high",
     "check": "npm run resume:check && npm run lint && npm run typecheck && npm run build",
     "test:e2e": "playwright test",
+    "performance:measure": "node scripts/measure-performance.mjs",
     "resume:build": "node scripts/build-resume.mjs",
     "resume:check": "node scripts/build-resume.mjs --check"
   },

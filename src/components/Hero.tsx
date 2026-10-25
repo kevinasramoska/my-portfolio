@@ -103,29 +103,33 @@ export default function Hero() {
             </div>
 
             <div className="space-y-3 p-6 font-mono text-sm leading-7 sm:p-8 sm:text-[15px]">
-              <p><span className="text-violet-400">const</span> <span className="text-blue-300">developer</span> <span className="text-zinc-500">=</span> <span className="text-amber-200">&#123;</span></p>
-              <p className="pl-5"><span className="text-cyan-300">focus</span><span className="text-zinc-500">:</span> <span className="text-emerald-300">&quot;Full-stack products&quot;</span><span className="text-zinc-500">,</span></p>
-              <p className="pl-5"><span className="text-cyan-300">caresAbout</span><span className="text-zinc-500">:</span> <span className="text-emerald-300">&quot;Clean, useful software&quot;</span><span className="text-zinc-500">,</span></p>
-              <p className="pl-5"><span className="text-cyan-300">superpower</span><span className="text-zinc-500">:</span> <span className="text-emerald-300">&quot;Keep improving&quot;</span><span className="text-zinc-500">,</span></p>
-              <p><span className="text-amber-200">&#125;</span><span className="text-zinc-500">;</span></p>
-              <p className="pt-2 text-zinc-500"><span className="text-violet-400">await</span> developer.<span className="text-blue-300">buildSomethingGreat</span><span className="text-amber-200">()</span><span className="typing-cursor ml-1 inline-block h-5 w-2 translate-y-1 bg-blue-400" aria-hidden="true" /></p>
+              <p aria-hidden="true"><span className="text-violet-400">const</span> <span className="text-blue-300">kevinas</span> <span className="text-zinc-500">=</span> <span className="text-amber-200">&#123;</span></p>
+              <dl aria-label="Engineering snapshot" className="space-y-3 pl-5">
+                {[
+                  { label: "role", value: profile.role },
+                  { label: "stack", value: profile.coreSkills.slice(0, 3).join(", ") },
+                  { label: "building", value: profile.engineeringSnapshot.building },
+                  { label: "testsWith", value: profile.engineeringSnapshot.testing },
+                ].map((item) => (
+                  <div key={item.label} className="min-w-0 break-words">
+                    <dt className="inline text-cyan-300">{item.label}<span aria-hidden="true" className="text-zinc-500">: </span></dt>{" "}
+                    <dd className="inline text-emerald-300">{item.value}</dd>
+                  </div>
+                ))}
+              </dl>
+              <p aria-hidden="true"><span className="text-amber-200">&#125;</span><span className="text-zinc-500">;</span></p>
             </div>
 
             <div className="grid grid-cols-2 border-t border-white/[0.08] bg-white/[0.025]">
-              <div className="border-r border-white/[0.08] p-5">
-                <div className="flex items-center gap-2 text-sm font-semibold text-zinc-100">
-                  <CheckCircle2 className="text-emerald-400" aria-hidden="true" size={17} />
-                  Backend first
+              {profile.engineeringSnapshot.proofPoints.map((point, index) => (
+                <div key={point.title} className={`min-w-0 p-5 ${index === 0 ? "border-r border-white/[0.08]" : ""}`}>
+                  <div className="flex items-start gap-2 text-sm font-semibold text-zinc-100">
+                    {index === 0 ? <CheckCircle2 className="mt-0.5 shrink-0 text-emerald-400" aria-hidden="true" size={17} /> : <Sparkles className="mt-0.5 shrink-0 text-violet-400" aria-hidden="true" size={17} />}
+                    {point.title}
+                  </div>
+                  <p className="mt-1.5 text-xs leading-5 text-zinc-400">{point.detail}</p>
                 </div>
-                <p className="mt-1.5 text-xs leading-5 text-zinc-500">Reliable foundations</p>
-              </div>
-              <div className="p-5">
-                <div className="flex items-center gap-2 text-sm font-semibold text-zinc-100">
-                  <Sparkles className="text-violet-400" aria-hidden="true" size={17} />
-                  Human focused
-                </div>
-                <p className="mt-1.5 text-xs leading-5 text-zinc-500">Interfaces that feel good</p>
-              </div>
+              ))}
             </div>
           </div>
         </div>
