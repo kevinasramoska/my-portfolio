@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, BookOpen } from "lucide-react";
-import { articles } from "@/content/articles";
+import { articles, articleReadTime } from "@/content/articles";
 
 export default function Writing({ showIndexLink = true }: { showIndexLink?: boolean }) {
   return (
@@ -30,7 +30,7 @@ export default function Writing({ showIndexLink = true }: { showIndexLink?: bool
               <div className="flex items-center justify-between gap-4">
                 <BookOpen className="text-violet-300" aria-hidden="true" size={21} />
                 <span className="text-xs font-semibold uppercase tracking-[0.14em] text-stone-500">
-                  0{index + 1} · {article.readTime}
+                  0{index + 1} · {articleReadTime(article)}
                 </span>
               </div>
               <h3 className="mt-7 text-2xl font-bold tracking-tight text-stone-100">
