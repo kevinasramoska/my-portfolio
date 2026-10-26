@@ -39,10 +39,11 @@ const fields = {
   projects: featuredProjects.map((project) => `<article class="entry">
     <h3>${escape(project.title)}</h3>
     <p class="project-link">${link(project.links.repository, new URL(project.links.repository).host + new URL(project.links.repository).pathname)}</p>
-    ${bullets(project.highlights.slice(0, 2))}
+    ${bullets(project.highlights)}
   </article>`).join("\n"),
   skills: resumeSkills.map((group) => `<div class="skill-group"><strong>${escape(group.title)}</strong>${escape(group.items)}</div>`).join("\n"),
   education: `<div class="compact-row"><p><strong>${escape(education.institution)}</strong> - ${escape(education.degree)}</p><span class="meta">${escape(education.period)}</span></div>
+    <p>Modules: ${escape(education.modules)}.</p>
     <div class="compact-row"><p>${link(certification.url, `${certification.issuer} ${certification.title}`)}</p><span class="meta">${escape(certification.issued)}</span></div>`,
 };
 

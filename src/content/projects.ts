@@ -19,9 +19,9 @@ export const projects = [
       "The finished workflow keeps stored holdings, realised profit and loss, and the audit ledger aligned—even when an older transaction is corrected or removed.",
     featured: true,
     highlights: [
-      "Atomic ledger replay keeps holdings and realised P/L consistent after transaction corrections.",
-      "JWT authentication, per-user data boundaries, rate limits, and production secret validation protect the API.",
-      "JUnit, MockMvc, PostgreSQL Testcontainers, Vitest, and Playwright cover backend and frontend behaviour.",
+      "Built a Java 25/Spring Boot 4 API with Next.js 16, React/TypeScript and PostgreSQL; secured authentication with JWT and migrations with Flyway.",
+      "Designed an auditable BUY/SELL ledger with atomic replay, precise cost-basis/P&L and validation of historical corrections.",
+      "Added market-price freshness, performance snapshots and CSV export, with JUnit, MockMvc, PostgreSQL Testcontainers, Vitest and CI.",
     ],
     screenshots: [
       {
@@ -162,9 +162,8 @@ export const projects = [
       "Tenants can report and follow a repair, owning landlords manage its progress, and administrators oversee the portfolio. Invitations, recorded history, and conflict checks protect the workflow.",
     featured: true,
     highlights: [
-      "React and TypeScript workspaces share one ASP.NET Core host with Identity account screens.",
-      "Resource-level authorization, immutable maintenance history, and concurrency checks protect rental workflows.",
-      "CI verifies frontend behavior, fast .NET tests, disposable SQL Server integration, and the application container.",
+      "Built versioned tenancy/maintenance APIs with ASP.NET Core Identity and EF Core: ownership checks, CSRF protection, immutable history and concurrency controls.",
+      "CI runs 596 .NET, 248 SQL integration and 91 frontend tests; Docker-based SQL workflows.",
     ],
     screenshots: [
       {

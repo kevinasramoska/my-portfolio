@@ -2,13 +2,13 @@
   "profile": {
     "name": "Kevinas Ramoska",
     "headline": "Full-stack engineer building reliable .NET business applications, automated tests, and secure user experiences.",
-    "summary": "At BWG Foods, I work across C#, ASP.NET Core, SQL Server, authentication, and delivery pipelines. I also bring Java Spring Boot, React, Kafka, and PostgreSQL experience from General Motors and my own full-stack projects.",
+    "summary": "Full stack engineer with commercial C#/.NET and Java/Spring Boot experience. Promoted from intern at BWG Foods, building ASP.NET Core and SQL Server portals for 206 stores; previously 17 months at General Motors on Spring Boot microservices and Kafka.",
     "availability": "I am always happy to connect with engineers, product teams, and people building useful software.",
     "metaDescription": "Kevinas Ramoska, Junior Full Stack Engineer at BWG Foods UC in Ireland. Explore C#/.NET, Java and React projects, case studies and technical writing.",
     "siteUrl": "https://kevinasramoska-portfolio.vercel.app",
     "email": "kevinas530@gmail.com",
     "phone": "+353 89 951 1136",
-    "location": "Ireland",
+    "location": "Celbridge, Co. Kildare, Ireland",
     "links": {
       "github": "https://github.com/kevinasramoska",
       "linkedin": "https://www.linkedin.com/in/kramoska/",
@@ -35,9 +35,9 @@
       "current": true,
       "milestone": "Promoted from internship",
       "highlights": [
-        "Develop ShopLinkPOS retailer and administration workflows with C#, ASP.NET Core MVC, Razor, and SQL Server.",
-        "Build Playwright for .NET and xUnit coverage with Azure DevOps pull-request validation and CI pipelines.",
-        "Improve SSO, permission-aware navigation, and production workflows; partner with QA to validate fixes."
+        "Build ShopLinkPOS retailer and admin portals with ASP.NET Core MVC, Razor, EF Core and SQL Server for 206 stores (~500 users).",
+        "Introduced 49 Playwright/.NET E2E tests and xUnit, plus 5 Azure DevOps PR-validation pipelines and main-to-dev branch pipelines for .NET and ColdFusion.",
+        "Added SSO, permission-aware navigation and audit logging; resolved UAT issues with QA."
       ]
     },
     {
@@ -48,33 +48,33 @@
       "current": false,
       "milestone": "Joined BWG engineering",
       "highlights": [
-        "Delivered ShopLinkPOS event registration, document management, and retailer content-publishing features.",
-        "Upgraded a .NET MAUI application from .NET 8 to .NET 10 for Android and iOS.",
-        "Contributed to Just Eat Q-commerce integration, consent-management migration, analytics, database updates, and UAT fixes."
+        "Upgraded the .NET MAUI Android/iOS app from .NET 8 to .NET 10.",
+        "Migrated OneTrust to PrivacyEngine and GA4 across 7 websites; extended Just Eat Q-commerce for age-restricted items."
       ]
     },
     {
       "period": "2024 - 2026",
       "title": "Full-time Judo Athlete",
-      "company": "Irish national squad",
-      "location": "International",
+      "company": "Irish National Judo Squad",
+      "location": "Ireland",
       "current": false,
       "milestone": "Full-time sport after graduation",
       "highlights": [
-        "Represented Ireland as a full-time athlete after graduation, travelling for training and competition across Europe, Japan, and Canada."
+        "Irish Senior Champion (2023); 7th at two Senior European Cups (+100 kg); competed across Europe, Japan, and Canada."
       ]
     },
     {
       "period": "Jan 2023 - May 2024",
-      "title": "Software Engineer Intern / Part-Time",
+      "title": "Software Engineer (Intern Jan 2023 - Sep 2023; Part-Time Sep 2023 - May 2024)",
       "company": "General Motors",
       "location": "Dublin",
       "current": false,
       "milestone": "Enterprise foundation",
       "highlights": [
-        "Built Java Spring Boot REST and data-sync workflows using PostgreSQL, JPA/Hibernate, and external APIs.",
-        "Implemented and debugged Kafka producers, consumers, failure scenarios, and service tests.",
-        "Created React screens with Ant Design and Azure AD/MSAL authentication for an internal application."
+        "Delivered a new internal web app end to end for the Connected Vehicle Carrier Platform, replacing a legacy tool: React/Ant Design front end with Microsoft SSO (MSAL/Azure AD) and Python scripts seeding its data.",
+        "Built its Spring Boot sync service (JPA, OkHttp) comparing file-transfer records with an external API and syncing changes; refactored to single-responsibility services with JUnit/Mockito tests.",
+        "Part-time: built Spring Boot service and controller features and fixed bugs across 4 Kafka microservices.",
+        "Added ELK monitoring for activation events and Kafka messaging in SAFe sprints."
       ]
     }
   ],
@@ -85,7 +85,8 @@
   "education": {
     "degree": "BSc Computer Science & Software Engineering",
     "institution": "Maynooth University",
-    "period": "2020 - 2024"
+    "period": "2020 - 2024",
+    "modules": "Algorithms, Databases, Software Testing, Software Engineering, Team Project"
   },
   "certification": {
     "title": "Azure Fundamentals (AZ-900)",
@@ -95,11 +96,13 @@
     "url": "https://learn.microsoft.com/en-us/users/kevinasramoska-0112/credentials/26a7611366eb82f2"
   },
   "resumeSkills": [
-    { "title": "Languages", "items": "C#, Java, TypeScript, JavaScript, SQL" },
-    { "title": "Frameworks", "items": "ASP.NET Core MVC, Razor, .NET MAUI, Spring Boot, React, Next.js" },
-    { "title": "Data", "items": "SQL Server, PostgreSQL, EF Core, JPA/Hibernate, Flyway" },
-    { "title": "Testing", "items": "Playwright, xUnit, JUnit, Mockito, MockMvc, Testcontainers" },
-    { "title": "Delivery", "items": "Azure DevOps, GitHub Actions, Docker, CI/CD" },
-    { "title": "Integration", "items": "REST APIs, Kafka, authentication, authorization, SSO" }
+    { "title": "Programming", "items": "C#, Java, TypeScript, JavaScript, SQL" },
+    { "title": "Frontend & Mobile", "items": "React, Next.js, Razor, Blazor, .NET MAUI" },
+    { "title": "Backend & APIs", "items": "ASP.NET Core MVC, REST APIs, OpenAPI, Spring Boot, Spring Security, JWT" },
+    { "title": "Data & Persistence", "items": "SQL Server, PostgreSQL, EF Core, Spring Data JPA/Hibernate, Flyway, Kafka" },
+    { "title": "Testing & Delivery", "items": "Playwright for .NET, xUnit, JUnit, Mockito, MockMvc, Testcontainers, Azure Pipelines, GitHub Actions, CI/CD" },
+    { "title": "Tools & Security", "items": "Git, Azure DevOps, Docker, IIS, ELK, Azure AD/MSAL, SSO, OAuth, Codex" },
+    { "title": "Spoken Languages", "items": "English, Lithuanian" },
+    { "title": "Practices", "items": "Agile/Scrum (SAFe), Code Review, SOLID, Change Management" }
   ]
 }
