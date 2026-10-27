@@ -5,7 +5,7 @@ export const projects = [
     slug: "crypto-portfolio-tracker",
     status: "published",
     title: "Crypto Portfolio Tracker",
-    updatedAt: "2026-10-16",
+    updatedAt: "2026-10-27",
     eyebrow: "Java + Spring Boot",
     summary:
       "A transaction-driven application for recording cryptocurrency trades, tracking stored holdings, and calculating realised and unrealised profit and loss.",
@@ -129,12 +129,14 @@ export const projects = [
       "GitHub Actions separates backend, frontend, and Playwright jobs and publishes Java and TypeScript coverage reports.",
       "Docker Compose provides PostgreSQL and pgAdmin locally; the backend also includes a production Dockerfile.",
       "CORS origins, JWT secrets, database credentials, rate limits, and runtime ports are environment-configured.",
+      "Publicly deployed on free tiers: the Spring Boot API runs as a Docker container on Render, the Next.js client on Vercel, and PostgreSQL on Neon over fully verified TLS, with Flyway migrations applied on startup.",
     ],
     limitations: [
       "The supported market-symbol list is fixed in backend code; unsupported symbols remain recordable but are excluded from known market-value totals.",
       "The in-memory rate limiter is per application instance and needs a shared store or edge control before horizontal scaling.",
       "Deployment promotion, database backup and restore, and rollback procedures are not yet documented.",
       "Portfolio snapshots are best-effort and can contain gaps when the backend is offline.",
+      "The public demo runs on free hosting tiers: the API sleeps when idle, so the first request after inactivity can take about a minute.",
     ],
     lessons: [
       "Financial calculations are easier to trust when correction rules and failure behaviour are explicit, transactional, and tested against the production database engine.",
@@ -142,6 +144,7 @@ export const projects = [
     ],
     links: {
       repository: "https://github.com/kevinasramoska/crypto-portfolio-app",
+      demo: "https://crypto-portfolio-app-hazel.vercel.app",
     },
   },
   {
